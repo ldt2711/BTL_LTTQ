@@ -147,16 +147,17 @@
   <ItemGroup>
     <None Include="Images\bookicon.png" />
     <None Include="Images\pngwing.com.png" />
-    <Content Include="LTTQ_QLSV.mdf">
+    <Content Include="Database\LTTQ_QLSV.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="LTTQ_QLSV_log.ldf">
+    <Content Include="Database\LTTQ_QLSV_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LTTQ_QLSV.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -43,7 +43,6 @@ namespace BTL_LTTQ.Common
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            Form.Load();
         }
     }
 }
