@@ -125,7 +125,7 @@
             // lBQuenMatKhau
             // 
             this.lBQuenMatKhau.AutoSize = true;
-            this.lBQuenMatKhau.Location = new System.Drawing.Point(91, 207);
+            this.lBQuenMatKhau.Location = new System.Drawing.Point(88, 207);
             this.lBQuenMatKhau.Name = "lBQuenMatKhau";
             this.lBQuenMatKhau.Size = new System.Drawing.Size(96, 16);
             this.lBQuenMatKhau.TabIndex = 8;
