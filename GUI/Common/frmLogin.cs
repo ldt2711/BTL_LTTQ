@@ -55,5 +55,15 @@ namespace BTL_LTTQ.Common
         {
 
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnLayout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
