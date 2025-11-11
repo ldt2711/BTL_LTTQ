@@ -1,4 +1,5 @@
 ﻿using BTL_LTTQ.Common;
+using BTL_LTTQ.GUI.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace BTL_LTTQ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmQuanLySinhVien());
         }
     }
 }
