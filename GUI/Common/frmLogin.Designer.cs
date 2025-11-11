@@ -34,14 +34,14 @@
             this.tBTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.tBMatKhau = new System.Windows.Forms.TextBox();
             this.gBDangNhap = new System.Windows.Forms.GroupBox();
+            this.lBQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.btLogin = new System.Windows.Forms.Button();
-            this.lbGioiThieu = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pBookIcon = new System.Windows.Forms.PictureBox();
-            this.btnQuenMK = new System.Windows.Forms.Button();
+            this.pnLayout = new System.Windows.Forms.Panel();
+            this.lbWelcome = new System.Windows.Forms.Label();
+            this.pBGraduate = new System.Windows.Forms.PictureBox();
             this.gBDangNhap.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBookIcon)).BeginInit();
+            this.pnLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGraduate)).BeginInit();
             this.SuspendLayout();
             // 
             // lbLogin
@@ -51,7 +51,7 @@
             this.lbLogin.Location = new System.Drawing.Point(4, 15);
             this.lbLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(131, 31);
+            this.lbLogin.Size = new System.Drawing.Size(161, 38);
             this.lbLogin.TabIndex = 0;
             this.lbLogin.Text = "Đăng nhập";
             this.lbLogin.Click += new System.EventHandler(this.lbLogin_Click);
@@ -83,22 +83,18 @@
             // tBTenTaiKhoan
             // 
             this.tBTenTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBTenTaiKhoan.Location = new System.Drawing.Point(10, 77);
-            this.tBTenTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBTenTaiKhoan.Location = new System.Drawing.Point(6, 85);
             this.tBTenTaiKhoan.Name = "tBTenTaiKhoan";
-            this.tBTenTaiKhoan.Size = new System.Drawing.Size(187, 22);
+            this.tBTenTaiKhoan.Size = new System.Drawing.Size(256, 22);
             this.tBTenTaiKhoan.TabIndex = 3;
             this.tBTenTaiKhoan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tBMatKhau
             // 
             this.tBMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBMatKhau.Location = new System.Drawing.Point(10, 136);
-            this.tBMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBMatKhau.Location = new System.Drawing.Point(6, 156);
             this.tBMatKhau.Name = "tBMatKhau";
-            this.tBMatKhau.Size = new System.Drawing.Size(187, 22);
+            this.tBMatKhau.Size = new System.Drawing.Size(256, 22);
             this.tBMatKhau.TabIndex = 4;
             // 
             // gBDangNhap
@@ -110,15 +106,24 @@
             this.gBDangNhap.Controls.Add(this.tBTenTaiKhoan);
             this.gBDangNhap.Controls.Add(this.lbTenTaiKhoan);
             this.gBDangNhap.Controls.Add(this.lbMatKhau);
-            this.gBDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gBDangNhap.Location = new System.Drawing.Point(376, 35);
-            this.gBDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gBDangNhap.Location = new System.Drawing.Point(544, 0);
             this.gBDangNhap.Name = "gBDangNhap";
-            this.gBDangNhap.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gBDangNhap.Size = new System.Drawing.Size(207, 236);
+            this.gBDangNhap.Size = new System.Drawing.Size(267, 502);
             this.gBDangNhap.TabIndex = 5;
             this.gBDangNhap.TabStop = false;
             this.gBDangNhap.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lBQuenMatKhau
+            // 
+            this.lBQuenMatKhau.AutoSize = true;
+            this.lBQuenMatKhau.Location = new System.Drawing.Point(84, 203);
+            this.lBQuenMatKhau.Name = "lBQuenMatKhau";
+            this.lBQuenMatKhau.Size = new System.Drawing.Size(96, 16);
+            this.lBQuenMatKhau.TabIndex = 8;
+            this.lBQuenMatKhau.TabStop = true;
+            this.lBQuenMatKhau.Text = "Quên mật khẩu";
+            this.lBQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btLogin
             // 
@@ -135,43 +140,38 @@
             this.btLogin.TabIndex = 7;
             this.btLogin.Text = "Đăng nhập";
             this.btLogin.UseVisualStyleBackColor = false;
-            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
-            // lbGioiThieu
+            // pnLayout
             // 
-            this.lbGioiThieu.AutoSize = true;
-            this.lbGioiThieu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGioiThieu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbGioiThieu.Location = new System.Drawing.Point(34, 169);
-            this.lbGioiThieu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbGioiThieu.Name = "lbGioiThieu";
-            this.lbGioiThieu.Size = new System.Drawing.Size(283, 50);
-            this.lbGioiThieu.TabIndex = 6;
-            this.lbGioiThieu.Text = "Chào mừng đến với trang web\r\nquản lý sinh viên";
-            this.lbGioiThieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pnLayout.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnLayout.Controls.Add(this.lbWelcome);
+            this.pnLayout.Controls.Add(this.pBGraduate);
+            this.pnLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnLayout.Location = new System.Drawing.Point(0, 0);
+            this.pnLayout.Name = "pnLayout";
+            this.pnLayout.Size = new System.Drawing.Size(544, 502);
+            this.pnLayout.TabIndex = 6;
+            this.pnLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLayout_Paint);
             // 
-            // panel1
+            // lbWelcome
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.pBookIcon);
-            this.panel1.Controls.Add(this.lbGioiThieu);
-            this.panel1.Location = new System.Drawing.Point(-2, -3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 373);
-            this.panel1.TabIndex = 7;
+            this.lbWelcome.AutoSize = true;
+            this.lbWelcome.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWelcome.Location = new System.Drawing.Point(164, 203);
+            this.lbWelcome.Name = "lbWelcome";
+            this.lbWelcome.Size = new System.Drawing.Size(233, 38);
+            this.lbWelcome.TabIndex = 1;
+            this.lbWelcome.Text = "Quản lý sinh viên";
             // 
-            // pBookIcon
+            // pBGraduate
             // 
-            this.pBookIcon.BackColor = System.Drawing.Color.SteelBlue;
-            this.pBookIcon.Image = global::BTL_LTTQ.Properties.Resources.pngwing_com;
-            this.pBookIcon.Location = new System.Drawing.Point(139, 25);
-            this.pBookIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pBookIcon.Name = "pBookIcon";
-            this.pBookIcon.Size = new System.Drawing.Size(101, 108);
-            this.pBookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBookIcon.TabIndex = 7;
-            this.pBookIcon.TabStop = false;
+            this.pBGraduate.Image = global::BTL_LTTQ.Properties.Resources.pngwing_com;
+            this.pBGraduate.Location = new System.Drawing.Point(209, 32);
+            this.pBGraduate.Name = "pBGraduate";
+            this.pBGraduate.Size = new System.Drawing.Size(132, 121);
+            this.pBGraduate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBGraduate.TabIndex = 0;
+            this.pBGraduate.TabStop = false;
             // 
             // btnQuenMK
             // 
@@ -189,17 +189,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(811, 502);
+            this.Controls.Add(this.pnLayout);
             this.Controls.Add(this.gBDangNhap);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.gBDangNhap.ResumeLayout(false);
             this.gBDangNhap.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBookIcon)).EndInit();
+            this.pnLayout.ResumeLayout(false);
+            this.pnLayout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGraduate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,9 +215,9 @@
         private System.Windows.Forms.TextBox tBMatKhau;
         private System.Windows.Forms.GroupBox gBDangNhap;
         private System.Windows.Forms.Button btLogin;
-        private System.Windows.Forms.Label lbGioiThieu;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pBookIcon;
-        private System.Windows.Forms.Button btnQuenMK;
+        private System.Windows.Forms.LinkLabel lBQuenMatKhau;
+        private System.Windows.Forms.Panel pnLayout;
+        private System.Windows.Forms.PictureBox pBGraduate;
+        private System.Windows.Forms.Label lbWelcome;
     }
 }
