@@ -1,4 +1,6 @@
 ﻿using BTL_LTTQ.Common;
+using BTL_LTTQ.GUI.Admin;
+using BTL_LTTQ.GUI.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
