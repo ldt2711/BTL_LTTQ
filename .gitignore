@@ -132,6 +132,10 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
+# Server file
+*.mdf
+*.ldf
+
 # TeamCity is a build add-in
 _TeamCity*
 
@@ -356,3 +360,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/DataBase/LTTQ_QLSV.mdf
+/DataBase/LTTQ_QLSV_log.ldf
+/BTL_LTTQ.csproj

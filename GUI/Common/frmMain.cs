@@ -12,44 +12,48 @@ namespace BTL_LTTQ.GUI.Common
 {
     public partial class frmMain : Form
     {
+        UC_Template sidebar;
+
         public frmMain()
         {
             InitializeComponent();
-            CollaspeMenu();
+            sidebar = new UC_Template();
+            sidebar.Dock = DockStyle.Left;
+            sidebar.MenuClicked += Sidebar_MenuClicked;
+            this.Controls.Add(sidebar);
+
+            this.Resize += FrmMain_Resize; // Gắn sự kiện resize
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void FrmMain_Resize(object sender, EventArgs e)
         {
-            CollaspeMenu();
+            sidebar.AutoAdjustByWindowSize(this.Width);
         }
 
-        private void CollaspeMenu()
+        private void Sidebar_MenuClicked(object sender, string buttonName)
         {
-            if (this.panelMenu.Width > 200) // Collapsing the menu
-            {
-                panelMenu.Width = 100;
-                pictureBox1.Visible = false;
-                btnMenu.Dock = DockStyle.Top;
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
-                {
-                    menuButton.Text = "";
-                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding(0);
-                }
-            }
-            // Expanding the menu
-            else
-            {
-                panelMenu.Width = 230;
-                pictureBox1.Visible = true;
-                btnMenu.Dock = DockStyle.None;
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
-                {
-                    menuButton.Text = "  " + menuButton.Tag.ToString();
-                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
-                    menuButton.Padding = new Padding(10, 0, 0, 0);
-                }
-            }
+            //switch (buttonName)
+            //{
+            //    case "btnTrangChu":
+            //        LoadContent(new UC_TrangChu());
+            //        break;
+            //    case "btnSinhVien":
+            //        LoadContent(new UC_QuanLySinhVien());
+            //        break;
+            //    case "btnMonHoc":
+            //        LoadContent(new UC_QuanLyMonHoc());
+            //        break;
+            //    case "btnThongKe":
+            //        LoadContent(new UC_ThongKe());
+            //        break;
+            //}
+        }
+
+        private void LoadContent(UserControl uc)
+        {
+            panelContainer.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(uc);
         }
     }
 }
