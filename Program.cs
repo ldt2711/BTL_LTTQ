@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp.Helpers;
 
 namespace BTL_LTTQ
 {
@@ -17,6 +18,14 @@ namespace BTL_LTTQ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Tạo database và bảng
+            DbInit.CreateDatabaseIfNotExists();
+            DbInit.CreateTablesIfNotExists();
+
+            // Chèn dữ liệu mẫu
+            DbDataGen.InsertSampleData();
+
             Application.Run(new frmLogin());
         }
     }

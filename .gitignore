@@ -362,4 +362,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /DataBase/LTTQ_QLSV.mdf
 /DataBase/LTTQ_QLSV_log.ldf
-/BTL_LTTQ.csproj
+# /BTL_LTTQ.csproj
