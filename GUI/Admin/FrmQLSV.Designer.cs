@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sidebar_Admin = new BTL_LTTQ.GUI.Common.UC_Template();
+            this.uc_sidebarAdmin1 = new BTL_LTTQ.GUI.Common.Uc_sidebarAdmin();
             this.SuspendLayout();
             // 
-            // sidebar_Admin
+            // uc_sidebarAdmin1
             // 
-            this.sidebar_Admin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar_Admin.Location = new System.Drawing.Point(0, 0);
-            this.sidebar_Admin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.sidebar_Admin.Name = "sidebar_Admin";
-            this.sidebar_Admin.Size = new System.Drawing.Size(380, 450);
-            this.sidebar_Admin.TabIndex = 0;
+            this.uc_sidebarAdmin1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_sidebarAdmin1.Location = new System.Drawing.Point(0, 0);
+            this.uc_sidebarAdmin1.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_sidebarAdmin1.Name = "uc_sidebarAdmin1";
+            this.uc_sidebarAdmin1.Size = new System.Drawing.Size(379, 450);
+            this.uc_sidebarAdmin1.TabIndex = 0;
+            this.uc_sidebarAdmin1.MenuClicked += new System.EventHandler<string>(this.Sidebar_MenuClicked);
+            this.uc_sidebarAdmin1.Load += new System.EventHandler(this.uc_sidebarAdmin1_Load);
             // 
             // FrmQLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.sidebar_Admin);
+            this.Controls.Add(this.uc_sidebarAdmin1);
             this.Name = "FrmQLSV";
             this.Text = "FrmQLSV";
             this.ResumeLayout(false);
@@ -54,6 +56,6 @@
 
         #endregion
 
-        private Common.UC_Template sidebar_Admin;
+        private Common.Uc_sidebarAdmin uc_sidebarAdmin1;
     }
 }

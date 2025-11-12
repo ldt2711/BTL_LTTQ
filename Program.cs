@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp.Helpers;
+using BTL_LTTQ.GUI.Admin;
 
 namespace BTL_LTTQ
 {
@@ -23,7 +24,7 @@ namespace BTL_LTTQ
 
             DatabaseConnection.InitializeDatabase();
 
-            Application.Run(new frmMain());
+            Application.Run(new FrmQLSV());
         }
     }
 }

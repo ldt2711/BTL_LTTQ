@@ -80,15 +80,51 @@
     <Compile Include="GUI\Admin\FrmQLSV.Designer.cs">
       <DependentUpon>FrmQLSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Admin\frmQuanLySinhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Admin\frmQuanLySinhVien.Designer.cs">
-      <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="Database\DbDataGen.cs" />
     <Compile Include="Database\DbInit.cs" />
+    <Compile Include="GUI\Admin\Uc_HocPhanAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_HocPhanAdmin.Designer.cs">
+      <DependentUpon>Uc_HocPhanAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_KhoaAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_KhoaAdmin.Designer.cs">
+      <DependentUpon>Uc_KhoaAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_NhapDiemAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_NhapDiemAdmin.Designer.cs">
+      <DependentUpon>Uc_NhapDiemAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_SinhVienAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_SinhVienAdmin.Designer.cs">
+      <DependentUpon>Uc_SinhVienAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKAdmin.Designer.cs">
+      <DependentUpon>Uc_TKAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKBCAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKBCAdmin.Designer.cs">
+      <DependentUpon>Uc_TKBCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TrangChuAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TrangChuAdmin.Designer.cs">
+      <DependentUpon>Uc_TrangChuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Common\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +137,11 @@
     <Compile Include="GUI\Common\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Common\UC_Template.cs">
+    <Compile Include="GUI\Common\UC_template.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Common\UC_Template.Designer.cs">
-      <DependentUpon>UC_Template.cs</DependentUpon>
+    <Compile Include="GUI\Common\Uc_sidebarAdmin.Designer.cs">
+      <DependentUpon>UC_template.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\SinhVien\Form1.cs">
       <SubType>Form</SubType>
@@ -118,8 +154,26 @@
     <EmbeddedResource Include="GUI\Admin\FrmQLSV.resx">
       <DependentUpon>FrmQLSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Admin\frmQuanLySinhVien.resx">
-      <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Admin\Uc_HocPhanAdmin.resx">
+      <DependentUpon>Uc_HocPhanAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_KhoaAdmin.resx">
+      <DependentUpon>Uc_KhoaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_NhapDiemAdmin.resx">
+      <DependentUpon>Uc_NhapDiemAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_SinhVienAdmin.resx">
+      <DependentUpon>Uc_SinhVienAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_TKAdmin.resx">
+      <DependentUpon>Uc_TKAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_TKBCAdmin.resx">
+      <DependentUpon>Uc_TKBCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_TrangChuAdmin.resx">
+      <DependentUpon>Uc_TrangChuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Common\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -127,8 +181,8 @@
     <EmbeddedResource Include="GUI\Common\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Common\UC_Template.resx">
-      <DependentUpon>UC_Template.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Common\Uc_sidebarAdmin.resx">
+      <DependentUpon>UC_template.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

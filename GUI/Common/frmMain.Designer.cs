@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.sidebar = new BTL_LTTQ.GUI.Common.UC_Template();
+            this.sidebar = new BTL_LTTQ.GUI.Common.Uc_sidebarAdmin();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -65,7 +65,7 @@
         }
 
         #endregion
-        private UC_Template sidebar;
+        private Uc_sidebarAdmin sidebar;
         private System.Windows.Forms.Panel panelContainer;
     }
 }

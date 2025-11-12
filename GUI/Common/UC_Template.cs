@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace BTL_LTTQ.GUI.Common
 {
-    public partial class UC_Template : UserControl
+    public partial class Uc_sidebarAdmin : UserControl
     {
         public event EventHandler<string> MenuClicked; // Sự kiện để thông báo form cha biết nút nào được bấm
         private bool isCollapsed = false;
-
-        public UC_Template()
+        private Button currentButton = null;
+        public Uc_sidebarAdmin()
         {
             InitializeComponent();
             CollaspeMenu(false);
@@ -98,7 +98,23 @@ namespace BTL_LTTQ.GUI.Common
             }
         }
 
-  
+
+        private void HighlightButton(Button btn)
+        {
+            // Đặt lại màu nút trước đó về mặc định
+            if (currentButton != null)
+            {
+                currentButton.BackColor = Color.FromArgb(21, 101, 192); // màu mặc định
+                currentButton.ForeColor = Color.White;
+            }
+            // Lưu nút hiện tại và đổi màu đậm
+            currentButton = btn;
+            currentButton.BackColor = Color.FromArgb(255,255,255); // màu đậm khi chọn
+            currentButton.ForeColor = Color.FromArgb(21, 101, 192);
+            
+        }
+
+
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
@@ -107,47 +123,55 @@ namespace BTL_LTTQ.GUI.Common
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "TrangChu");
+            
         }
 
         private void btnSinhVien_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "SinhVien");
+            
         }
 
         private void btnHocPhan_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "HocPhan");
+            
         }
 
         private void btnNhapDiem_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "NhapDiem");
+            
         }
 
         private void btnTKBC_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "TKBC");
+            
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "TaiKhoan");
+            
         }
 
-        private void btnXemDiem_Click(object sender, EventArgs e)
-        {
-            MenuClicked?.Invoke(this, "XemDiem");
-        }
+
 
         private void btnKhoa_Click(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             MenuClicked?.Invoke(this, "Khoa");
+            
         }
 
-        private void btnThongTin_Click(object sender, EventArgs e)
-        {
-            MenuClicked?.Invoke(this, "ThongTin");
-        }
+
     }
 }
