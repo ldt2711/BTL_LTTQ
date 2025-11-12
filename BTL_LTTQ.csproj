@@ -74,6 +74,12 @@
     <Compile Include="BUS\LopHocBUS.cs" />
     <Compile Include="DAL\LopHocDAL.cs" />
     <Compile Include="Database\AppSetting.cs" />
+    <Compile Include="GUI\Admin\FrmQLSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\FrmQLSV.Designer.cs">
+      <DependentUpon>FrmQLSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Admin\frmQuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Admin\FrmQLSV.resx">
+      <DependentUpon>FrmQLSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\frmQuanLySinhVien.resx">
       <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>

@@ -41,11 +41,6 @@ namespace BTL_LTTQ.GUI.Common
             //}
         }
 
-        private void LoadContent(UserControl uc)
-        {
-            panelContainer.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(uc);
-        }
+
     }
 }

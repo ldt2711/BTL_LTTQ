@@ -52,8 +52,8 @@ namespace BTL_LTTQ.GUI.Common
             }
             else // Mở rộng menu
             {
-                this.Width = 230;
-                panelMenu.Width = 230;
+                this.Width = 400;
+                panelMenu.Width = 400;
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
 
@@ -98,14 +98,56 @@ namespace BTL_LTTQ.GUI.Common
             }
         }
 
-        private void btnThongTin_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "TrangChu");
+        }
+
+        private void btnSinhVien_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "SinhVien");
+        }
+
+        private void btnHocPhan_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "HocPhan");
+        }
+
+        private void btnNhapDiem_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "NhapDiem");
+        }
+
+        private void btnTKBC_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "TKBC");
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "TaiKhoan");
+        }
+
+        private void btnXemDiem_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "XemDiem");
+        }
+
+        private void btnKhoa_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "Khoa");
+        }
+
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+            MenuClicked?.Invoke(this, "ThongTin");
         }
     }
 }
