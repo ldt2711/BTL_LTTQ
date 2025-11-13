@@ -69,6 +69,7 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
@@ -82,6 +83,7 @@
             // 
             // panelFilter
             // 
+            this.panelFilter.BackColor = System.Drawing.Color.White;
             this.panelFilter.Controls.Add(this.tableLayoutPanel1);
             this.panelFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFilter.Location = new System.Drawing.Point(0, 61);
@@ -211,6 +213,7 @@
             // 
             // panelBottom
             // 
+            this.panelBottom.BackColor = System.Drawing.Color.White;
             this.panelBottom.Controls.Add(this.btnXuatBangDiem);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 424);
