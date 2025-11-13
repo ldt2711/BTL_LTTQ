@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgSinhVien = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +42,7 @@
             this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDBDataSet2 = new BTL_LTTQ.StudentDBDataSet2();
+            this.btnHTTheoKhoa = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtTenKhoa = new System.Windows.Forms.TextBox();
@@ -54,12 +56,11 @@
             this.studentDBDataSet1 = new BTL_LTTQ.StudentDBDataSet1();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHTTheoKhoa = new System.Windows.Forms.Button();
             this.kHOATableAdapter = new BTL_LTTQ.StudentDBDataSet1TableAdapters.KHOATableAdapter();
             this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             this.sINHVIENTableAdapter = new BTL_LTTQ.StudentDBDataSet2TableAdapters.SINHVIENTableAdapter();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet2)).BeginInit();
@@ -69,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,10 +80,26 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(631, 456);
+            this.panel1.Size = new System.Drawing.Size(1026, 475);
             this.panel1.TabIndex = 1;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.93101F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.06899F));
+            this.tableLayoutPanel3.Controls.Add(this.dgSinhVien, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnHTTheoKhoa, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 364);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1428, 236);
+            this.tableLayoutPanel3.TabIndex = 4;
             // 
             // dgSinhVien
             // 
@@ -100,11 +116,12 @@
             this.MaKhoa_SV,
             this.MaTK});
             this.dgSinhVien.DataSource = this.sINHVIENBindingSource;
-            this.dgSinhVien.Location = new System.Drawing.Point(3, 3);
+            this.dgSinhVien.Location = new System.Drawing.Point(4, 4);
+            this.dgSinhVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgSinhVien.Name = "dgSinhVien";
             this.dgSinhVien.RowHeadersWidth = 51;
             this.dgSinhVien.RowTemplate.Height = 24;
-            this.dgSinhVien.Size = new System.Drawing.Size(710, 186);
+            this.dgSinhVien.Size = new System.Drawing.Size(947, 229);
             this.dgSinhVien.TabIndex = 3;
             // 
             // MaSV
@@ -181,20 +198,37 @@
             this.studentDBDataSet2.DataSetName = "StudentDBDataSet2";
             this.studentDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnHTTheoKhoa
+            // 
+            this.btnHTTheoKhoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnHTTheoKhoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnHTTheoKhoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnHTTheoKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHTTheoKhoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnHTTheoKhoa.Location = new System.Drawing.Point(959, 4);
+            this.btnHTTheoKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHTTheoKhoa.Name = "btnHTTheoKhoa";
+            this.btnHTTheoKhoa.Size = new System.Drawing.Size(427, 71);
+            this.btnHTTheoKhoa.TabIndex = 2;
+            this.btnHTTheoKhoa.Text = "Hiển thị danh sách sinh viên";
+            this.btnHTTheoKhoa.UseVisualStyleBackColor = false;
+            this.btnHTTheoKhoa.Click += new System.EventHandler(this.Uc_ThongKeSinhVienTheoKhoa);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.6456F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.3544F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgKhoa, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 83);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 102);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1261, 199);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1681, 245);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -207,21 +241,23 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtMaKhoa, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(565, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(753, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.81347F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.18653F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(693, 193);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(924, 238);
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // txtTenKhoa
             // 
             this.txtTenKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKhoa.Location = new System.Drawing.Point(281, 102);
+            this.txtTenKhoa.Location = new System.Drawing.Point(375, 126);
+            this.txtTenKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(200, 26);
+            this.txtTenKhoa.Size = new System.Drawing.Size(265, 26);
             this.txtTenKhoa.TabIndex = 2;
             // 
             // label3
@@ -229,9 +265,10 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(190, 99);
+            this.label3.Location = new System.Drawing.Point(253, 122);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên Khoa:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -241,9 +278,10 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(195, 39);
+            this.label2.Location = new System.Drawing.Point(260, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Khoa:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,9 +291,10 @@
             // 
             this.txtMaKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtMaKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhoa.Location = new System.Drawing.Point(281, 36);
+            this.txtMaKhoa.Location = new System.Drawing.Point(375, 44);
+            this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(200, 26);
+            this.txtMaKhoa.Size = new System.Drawing.Size(265, 26);
             this.txtMaKhoa.TabIndex = 1;
             // 
             // dgKhoa
@@ -269,11 +308,12 @@
             this.TenKhoa});
             this.dgKhoa.DataSource = this.kHOABindingSource;
             this.dgKhoa.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgKhoa.Location = new System.Drawing.Point(81, 3);
+            this.dgKhoa.Location = new System.Drawing.Point(108, 4);
+            this.dgKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgKhoa.Name = "dgKhoa";
             this.dgKhoa.RowHeadersWidth = 51;
             this.dgKhoa.RowTemplate.Height = 24;
-            this.dgKhoa.Size = new System.Drawing.Size(400, 193);
+            this.dgKhoa.Size = new System.Drawing.Size(533, 238);
             this.dgKhoa.TabIndex = 0;
             this.dgKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhoa_CellContentClick);
             this.dgKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhoa_CellContentClick);
@@ -309,8 +349,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1261, 83);
+            this.panel2.Size = new System.Drawing.Size(1681, 102);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -319,27 +360,13 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(478, 26);
+            this.label1.Location = new System.Drawing.Point(637, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh Sách Khoa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnHTTheoKhoa
-            // 
-            this.btnHTTheoKhoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.btnHTTheoKhoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
-            this.btnHTTheoKhoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
-            this.btnHTTheoKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHTTheoKhoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnHTTheoKhoa.Location = new System.Drawing.Point(719, 3);
-            this.btnHTTheoKhoa.Name = "btnHTTheoKhoa";
-            this.btnHTTheoKhoa.Size = new System.Drawing.Size(320, 58);
-            this.btnHTTheoKhoa.TabIndex = 2;
-            this.btnHTTheoKhoa.Text = "Hiển thị danh sách sinh viên";
-            this.btnHTTheoKhoa.UseVisualStyleBackColor = false;
-            this.btnHTTheoKhoa.Click += new System.EventHandler(this.Uc_ThongKeSinhVienTheoKhoa);
             // 
             // kHOATableAdapter
             // 
@@ -361,29 +388,27 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.93101F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.06899F));
-            this.tableLayoutPanel3.Controls.Add(this.dgSinhVien, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnHTTheoKhoa, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 296);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1071, 192);
-            this.tableLayoutPanel3.TabIndex = 4;
-            // 
             // Uc_KhoaAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Uc_KhoaAdmin";
-            this.Size = new System.Drawing.Size(631, 456);
+            this.Size = new System.Drawing.Size(1026, 475);
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet2)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKhoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
