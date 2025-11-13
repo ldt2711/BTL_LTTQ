@@ -66,7 +66,6 @@ namespace WinFormsApp.DAL
                 NgaySinh, 
                 GioiTinh, 
                 NoiSinh,
-                GioiTinh,
                 Lop,
                 MaKhoa,
                 MaTK
@@ -86,6 +85,29 @@ namespace WinFormsApp.DAL
             }
         }
 
+        //Lấy dữ liệu tất cả SinhVien
+        public static DataTable GetTatCaSinhVien()
+        {
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            {
+                string query = @"
+            SELECT 
+                MaSV, 
+                HoTen, 
+                NgaySinh, 
+                GioiTinh, 
+                NoiSinh,
+                Lop,
+                MaKhoa,
+                MaTK
+            FROM SINHVIEN";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
 
         // ✅ Hàm lấy thống kê GPA theo trọng số tín chỉ
         public static DataTable GetThongKeHocLuc(string filterType1, string value1, string filterType2, string value2)

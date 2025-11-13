@@ -70,6 +70,7 @@ namespace BTL_LTTQ.GUI.Admin
 
 
 
+
         private void label2_Click(object sender, EventArgs e)
         {
 

@@ -76,6 +76,7 @@
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="DAL\LopHocDAL.cs" />
+    <Compile Include="DAL\SinhVien_CB_DAL.cs" />
     <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DAL\ThongKeDAL.cs" />
     <Compile Include="Database\AppSetting.cs" />
