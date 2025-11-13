@@ -66,6 +66,12 @@ namespace BTL_LTTQ.GUI.Admin
             this.frmLoginInstance = frmLoginInstance;
             this.FormClosed += FrmQLSV_FormClosed;
         }
+        public FrmQLSV()
+        {
+            InitializeComponent();
+            KhoiTaoUserControls();
+
+        }
         private void FrmAdmin_Resize(object sender, EventArgs e)
         {
             uc_sidebarAdmin1.AutoAdjustByWindowSize(this.Width);

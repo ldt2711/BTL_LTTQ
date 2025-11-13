@@ -16,5 +16,10 @@ namespace BTL_LTTQ.GUI.SinhVien
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
