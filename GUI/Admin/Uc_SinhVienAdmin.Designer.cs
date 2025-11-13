@@ -30,42 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtLop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtLop = new System.Windows.Forms.TextBox();
-            this.txtNoiSinh = new System.Windows.Forms.TextBox();
-            this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNoiSinh = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentDBDataSet = new BTL_LTTQ.StudentDBDataSet();
-            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sINHVIENTableAdapter = new BTL_LTTQ.StudentDBDataSetTableAdapters.SINHVIENTableAdapter();
-            this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiSinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,30 +71,22 @@
             this.panel1.Size = new System.Drawing.Size(1092, 887);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // dataGridView1
             // 
-            this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1092, 78);
-            this.panel2.TabIndex = 0;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.sINHVIENBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 286);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1092, 177);
+            this.dataGridView1.TabIndex = 2;
             // 
-            // label1
+            // sINHVIENBindingSource
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(300, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(524, 58);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TRA CỨU SINH VIÊN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
             // 
             // tableLayoutPanel1
             // 
@@ -141,6 +122,14 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1092, 208);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // txtLop
+            // 
+            this.txtLop.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLop.Location = new System.Drawing.Point(527, 21);
+            this.txtLop.Name = "txtLop";
+            this.txtLop.Size = new System.Drawing.Size(162, 26);
+            this.txtLop.TabIndex = 9;
             // 
             // label2
             // 
@@ -197,6 +186,17 @@
             this.dtpNgaySinh.Size = new System.Drawing.Size(162, 26);
             this.dtpNgaySinh.TabIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(408, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Lớp:";
+            this.label5.Click += new System.EventHandler(this.label5_Click_2);
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -206,6 +206,14 @@
             this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Nơi Sinh:";
+            // 
+            // txtNoiSinh
+            // 
+            this.txtNoiSinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtNoiSinh.Location = new System.Drawing.Point(527, 90);
+            this.txtNoiSinh.Name = "txtNoiSinh";
+            this.txtNoiSinh.Size = new System.Drawing.Size(162, 26);
+            this.txtNoiSinh.TabIndex = 10;
             // 
             // label7
             // 
@@ -217,41 +225,14 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Khoa:";
             // 
-            // txtLop
-            // 
-            this.txtLop.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLop.Location = new System.Drawing.Point(527, 21);
-            this.txtLop.Name = "txtLop";
-            this.txtLop.Size = new System.Drawing.Size(162, 26);
-            this.txtLop.TabIndex = 9;
-            // 
-            // txtNoiSinh
-            // 
-            this.txtNoiSinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNoiSinh.Location = new System.Drawing.Point(527, 90);
-            this.txtNoiSinh.Name = "txtNoiSinh";
-            this.txtNoiSinh.Size = new System.Drawing.Size(162, 26);
-            this.txtNoiSinh.TabIndex = 10;
-            // 
             // cmbKhoa
             // 
             this.cmbKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbKhoa.FormattingEnabled = true;
-            this.cmbKhoa.Location = new System.Drawing.Point(866, 29);
+            this.cmbKhoa.Location = new System.Drawing.Point(866, 22);
             this.cmbKhoa.Name = "cmbKhoa";
             this.cmbKhoa.Size = new System.Drawing.Size(164, 28);
             this.cmbKhoa.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(408, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Lớp:";
-            this.label5.Click += new System.EventHandler(this.label5_Click_2);
             // 
             // label10
             // 
@@ -281,105 +262,30 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // panel2
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSVDataGridViewTextBoxColumn,
-            this.hoTenDataGridViewTextBoxColumn,
-            this.ngaySinhDataGridViewTextBoxColumn,
-            this.noiSinhDataGridViewTextBoxColumn,
-            this.gioiTinhDataGridViewTextBoxColumn,
-            this.lopDataGridViewTextBoxColumn,
-            this.maKhoaDataGridViewTextBoxColumn,
-            this.maTKDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.sINHVIENBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 286);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1092, 177);
-            this.dataGridView1.TabIndex = 2;
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1092, 78);
+            this.panel2.TabIndex = 0;
             // 
-            // studentDBDataSet
+            // label1
             // 
-            this.studentDBDataSet.DataSetName = "StudentDBDataSet";
-            this.studentDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sINHVIENBindingSource
-            // 
-            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
-            this.sINHVIENBindingSource.DataSource = this.studentDBDataSet;
-            // 
-            // sINHVIENTableAdapter
-            // 
-            this.sINHVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // maSVDataGridViewTextBoxColumn
-            // 
-            this.maSVDataGridViewTextBoxColumn.DataPropertyName = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.HeaderText = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maSVDataGridViewTextBoxColumn.Name = "maSVDataGridViewTextBoxColumn";
-            this.maSVDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ngaySinhDataGridViewTextBoxColumn
-            // 
-            this.ngaySinhDataGridViewTextBoxColumn.DataPropertyName = "NgaySinh";
-            this.ngaySinhDataGridViewTextBoxColumn.HeaderText = "NgaySinh";
-            this.ngaySinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngaySinhDataGridViewTextBoxColumn.Name = "ngaySinhDataGridViewTextBoxColumn";
-            this.ngaySinhDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // noiSinhDataGridViewTextBoxColumn
-            // 
-            this.noiSinhDataGridViewTextBoxColumn.DataPropertyName = "NoiSinh";
-            this.noiSinhDataGridViewTextBoxColumn.HeaderText = "NoiSinh";
-            this.noiSinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.noiSinhDataGridViewTextBoxColumn.Name = "noiSinhDataGridViewTextBoxColumn";
-            this.noiSinhDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gioiTinhDataGridViewTextBoxColumn
-            // 
-            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
-            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "GioiTinh";
-            this.gioiTinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
-            this.gioiTinhDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lopDataGridViewTextBoxColumn
-            // 
-            this.lopDataGridViewTextBoxColumn.DataPropertyName = "Lop";
-            this.lopDataGridViewTextBoxColumn.HeaderText = "Lop";
-            this.lopDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lopDataGridViewTextBoxColumn.Name = "lopDataGridViewTextBoxColumn";
-            this.lopDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maKhoaDataGridViewTextBoxColumn
-            // 
-            this.maKhoaDataGridViewTextBoxColumn.DataPropertyName = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.HeaderText = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maKhoaDataGridViewTextBoxColumn.Name = "maKhoaDataGridViewTextBoxColumn";
-            this.maKhoaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maTKDataGridViewTextBoxColumn
-            // 
-            this.maTKDataGridViewTextBoxColumn.DataPropertyName = "MaTK";
-            this.maTKDataGridViewTextBoxColumn.HeaderText = "MaTK";
-            this.maTKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maTKDataGridViewTextBoxColumn.Name = "maTKDataGridViewTextBoxColumn";
-            this.maTKDataGridViewTextBoxColumn.Width = 125;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(300, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(524, 58);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TRA CỨU SINH VIÊN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Uc_SinhVienAdmin
             // 
@@ -390,13 +296,12 @@
             this.Size = new System.Drawing.Size(1092, 887);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +337,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maTKDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
-        private StudentDBDataSet studentDBDataSet;
-        private StudentDBDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
+        //private StudentDBDataSet studentDBDataSet;
+        //private StudentDBDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
     }
 }

@@ -16,5 +16,10 @@ namespace BTL_LTTQ.GUI.Admin
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
