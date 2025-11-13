@@ -93,5 +93,10 @@ namespace BTL_LTTQ.GUI.Admin
                 txtTenKhoa.Text = row.Cells["TenKhoa"].Value?.ToString();
             }
         }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

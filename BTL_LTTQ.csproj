@@ -225,6 +225,11 @@
     <Compile Include="GUI\SinhVien\Uc_XemDiemSinhVien.Designer.cs">
       <DependentUpon>Uc_XemDiemSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOCPHANDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOCPHANDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentDBDataSet.Designer.cs">
@@ -295,6 +300,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="HOCPHANDataSet.xsc">
+      <DependentUpon>HOCPHANDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HOCPHANDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOCPHANDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOCPHANDataSet.xss">
+      <DependentUpon>HOCPHANDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
