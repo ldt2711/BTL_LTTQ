@@ -16,5 +16,10 @@ namespace BTL_LTTQ.GUI.SinhVien
         {
             InitializeComponent();
         }
+
+        private void gBHocVan_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

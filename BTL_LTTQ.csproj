@@ -76,6 +76,7 @@
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="DAL\LopHocDAL.cs" />
+    <Compile Include="DAL\SinhVien_CB_DAL.cs" />
     <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DAL\ThongKeDAL.cs" />
     <Compile Include="Database\AppSetting.cs" />
@@ -181,9 +182,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentDBDataSet.Designer.cs">
+      <DependentUpon>StudentDBDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="StudentDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentDBDataSet.xsd</DependentUpon>
+      <DependentUpon>StudentDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\Admin\FrmQLSV.resx">
       <DependentUpon>FrmQLSV.cs</DependentUpon>
@@ -278,12 +289,34 @@
       <DependentUpon>StudentDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="StudentDBDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>StudentDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="StudentDBDataSet.xss">
       <DependentUpon>StudentDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet1.xsc">
+      <DependentUpon>StudentDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDBDataSet1.xss">
+      <DependentUpon>StudentDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet2.xsc">
+      <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDBDataSet2.xss">
+      <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Utils\Images\bookicon.png" />
     <None Include="Utils\Images\pngwing.com.png" />
