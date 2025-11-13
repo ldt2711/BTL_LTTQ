@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,24 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BTL_LTTQ.GUI.Common
+namespace BTL_LTTQ.GUI.Admin
 {
     public partial class Uc_sidebarAdmin : UserControl
     {
         public event EventHandler<string> MenuClicked;
         private bool isCollapsed = false;
         private bool isTextVisible = false; // Biến trạng thái mới
+        private IconButton currentButton = null;
 
         private Timer animationTimer;
         private int targetWidth;
         private const int ANIMATION_SPEED_DIVISOR = 6;
         private const int MAX_WIDTH = 400;
         private const int MIN_WIDTH = 100;
-
-        // Mốc để thay đổi text/icon (khoảng 2/3 của MAX_WIDTH)
+                
         private const int TEXT_TRIGGER_WIDTH = 270;
 
-        public UC_Template()
+        public Uc_sidebarAdmin()
         {
             InitializeComponent();
 
@@ -34,11 +35,12 @@ namespace BTL_LTTQ.GUI.Common
             animationTimer.Tick += AnimationTimer_Tick;
 
             // Thiết lập trạng thái ban đầu (mở rộng)
-            isCollapsed = false;
-            isTextVisible = true;
+            isCollapsed = true;
+            isTextVisible = false;
             targetWidth = MAX_WIDTH;
-            SnapToWidth(false);       // Cài đặt Width ban đầu
-            UpdateMenuVisuals(false); // Cài đặt Text/Icon ban đầu
+            SnapToWidth(true);       // Cài đặt Width ban đầu
+            UpdateMenuVisuals(true); // Cài đặt Text/Icon ban đầu
+            HighlightButton(btnTrangChu); // Mặc định chọn Trang Chủ
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -73,8 +75,6 @@ namespace BTL_LTTQ.GUI.Common
                 panelMenu.Width += step;
                 this.Width += step;
 
-                // *** LOGIC THAY ĐỔI TEXT/ICON GIỮA ANIMATION ***
-
                 // 1. Nếu đang THU GỌN, text VẪN HIỆN, và Width < mốc
                 if (isCollapsed && isTextVisible && panelMenu.Width < TEXT_TRIGGER_WIDTH)
                 {
@@ -98,7 +98,6 @@ namespace BTL_LTTQ.GUI.Common
             panelMenu.Width = width;
         }
 
-        // HÀM MỚI: Chỉ cập nhật Text, Icon, Padding
         private void UpdateMenuVisuals(bool collapse)
         {
             if (collapse) // Thu gọn (ẩn text, căn giữa icon)
@@ -106,7 +105,7 @@ namespace BTL_LTTQ.GUI.Common
                 pictureBox1.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
 
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                foreach (IconButton menuButton in panelMenu.Controls.OfType<IconButton>())
                 {
                     if (menuButton != btnMenu)
                     {
@@ -121,7 +120,7 @@ namespace BTL_LTTQ.GUI.Common
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
 
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                foreach (IconButton menuButton in panelMenu.Controls.OfType<IconButton>())
                 {
                     if (menuButton != btnMenu)
                     {
@@ -131,21 +130,6 @@ namespace BTL_LTTQ.GUI.Common
                     }
                 }
             }
-        }
-
-        // Hàm xử lý click chung
-        private void MenuButton_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn == null) return;
-
-            MenuClicked?.Invoke(this, btn.Tag?.ToString());
-
-            // Không tự động đóng menu nữa (hoặc bạn có thể giữ nếu muốn)
-            // if (!isCollapsed)
-            // {
-            //     ToggleMenu();
-            // }
         }
 
         // Cập nhật hàm AutoAdjust để dùng hàm mới
@@ -170,18 +154,17 @@ namespace BTL_LTTQ.GUI.Common
         }
 
 
-        private void HighlightButton(Button btn)
+        private void HighlightButton(IconButton btn)
         {
             // Đặt lại màu nút trước đó về mặc định
             if (currentButton != null)
             {
                 currentButton.BackColor = Color.FromArgb(21, 101, 192); // màu mặc định
-                currentButton.ForeColor = Color.White;
+                currentButton.ForeColor = currentButton.IconColor = Color.White;
             }
             // Lưu nút hiện tại và đổi màu đậm
             currentButton = btn;
-            currentButton.BackColor = Color.FromArgb(255,255,255); // màu đậm khi chọn
-            currentButton.ForeColor = Color.FromArgb(21, 101, 192);
+            currentButton.BackColor = Color.FromArgb(13, 71, 161); // màu đậm khi chọn
             
         }
 
@@ -194,42 +177,42 @@ namespace BTL_LTTQ.GUI.Common
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "TrangChu");
             
         }
 
         private void btnSinhVien_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "SinhVien");
             
         }
 
         private void btnHocPhan_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "HocPhan");
             
         }
 
         private void btnNhapDiem_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "NhapDiem");
             
         }
 
         private void btnTKBC_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "TKBC");
             
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "TaiKhoan");
             
         }
@@ -238,11 +221,27 @@ namespace BTL_LTTQ.GUI.Common
 
         private void btnKhoa_Click(object sender, EventArgs e)
         {
-            HighlightButton(sender as Button);
+            HighlightButton(sender as IconButton);
             MenuClicked?.Invoke(this, "Khoa");
             
         }
 
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn đăng xuất không?", // Nội dung
+                "Xác nhận Đăng xuất", // Tiêu đề
+                MessageBoxButtons.YesNo, // Nút Yes/No
+                MessageBoxIcon.Question // Icon
+            );
 
+            // 2. Chỉ xử lý nếu người dùng nhấn "Yes"
+            if (result == DialogResult.Yes)
+            {
+                HighlightButton(sender as IconButton);
+
+                MenuClicked?.Invoke(this, "DangXuat");
+            }
+        }
     }
 }

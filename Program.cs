@@ -24,7 +24,7 @@ namespace BTL_LTTQ
 
             DatabaseConnection.InitializeDatabase();
 
-            Application.Run(new FrmQLSV());
+            Application.Run(new frmLogin());
         }
     }
 }

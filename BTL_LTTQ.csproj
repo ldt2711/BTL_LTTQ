@@ -137,17 +137,47 @@
     <Compile Include="GUI\Common\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Common\UC_template.cs">
+    <Compile Include="GUI\Admin\Uc_sidebarAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Common\Uc_sidebarAdmin.Designer.cs">
-      <DependentUpon>UC_template.cs</DependentUpon>
+    <Compile Include="GUI\Admin\Uc_sidebarAdmin.Designer.cs">
+      <DependentUpon>Uc_sidebarAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SinhVien\Form1.cs">
+    <Compile Include="GUI\SinhVien\frmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\SinhVien\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\SinhVien\frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_HocPhanSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_HocPhanSinhVien.Designer.cs">
+      <DependentUpon>Uc_HocPhanSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_sidebarSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_sidebarSinhVien.Designer.cs">
+      <DependentUpon>Uc_sidebarSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TTCNSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TTCNSinhVien.Designer.cs">
+      <DependentUpon>Uc_TTCNSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TrangChuSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TrangChuSinhVien.Designer.cs">
+      <DependentUpon>Uc_TrangChuSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_XemDiemSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_XemDiemSinhVien.Designer.cs">
+      <DependentUpon>Uc_XemDiemSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,8 +211,14 @@
     <EmbeddedResource Include="GUI\Common\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Common\Uc_sidebarAdmin.resx">
-      <DependentUpon>UC_template.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Admin\Uc_sidebarAdmin.resx">
+      <DependentUpon>Uc_sidebarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\Uc_sidebarSinhVien.resx">
+      <DependentUpon>Uc_sidebarSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BTL_LTTQ.GUI.SinhVien
 {
-    public partial class Form1 : Form
+    public partial class Uc_TrangChuSinhVien : UserControl
     {
-        public Form1()
+        public Uc_TrangChuSinhVien()
         {
             InitializeComponent();
         }

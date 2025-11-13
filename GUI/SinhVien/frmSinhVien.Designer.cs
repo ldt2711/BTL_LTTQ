@@ -1,8 +1,6 @@
-﻿using BTL_LTTQ.GUI.Admin;
-
-namespace BTL_LTTQ.GUI.Common
+﻿namespace BTL_LTTQ.GUI.SinhVien
 {
-    partial class frmMain
+    partial class frmSinhVien
     {
         /// <summary>
         /// Required designer variable.
@@ -30,33 +28,32 @@ namespace BTL_LTTQ.GUI.Common
         /// </summary>
         private void InitializeComponent()
         {
-            this.sidebar = new BTL_LTTQ.GUI.Admin.Uc_sidebarAdmin();
+            this.uc_sidebarSinhVien1 = new BTL_LTTQ.GUI.SinhVien.Uc_sidebarSinhVien();
             this.SuspendLayout();
             // 
-            // sidebar
+            // uc_sidebarSinhVien1
             // 
-            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(400, 606);
-            this.sidebar.TabIndex = 2;
+            this.uc_sidebarSinhVien1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uc_sidebarSinhVien1.Location = new System.Drawing.Point(0, 0);
+            this.uc_sidebarSinhVien1.Name = "uc_sidebarSinhVien1";
+            this.uc_sidebarSinhVien1.Size = new System.Drawing.Size(100, 656);
+            this.uc_sidebarSinhVien1.TabIndex = 0;
+            this.uc_sidebarSinhVien1.MenuClicked += new System.EventHandler<string>(this.Sidebar_MenuClicked);
             // 
-            // frmMain
+            // frmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 606);
-            this.Controls.Add(this.sidebar);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(716, 495);
-            this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.ClientSize = new System.Drawing.Size(862, 656);
+            this.Controls.Add(this.uc_sidebarSinhVien1);
+            this.Name = "frmSinhVien";
+            this.Text = "frmSinhVien";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Uc_sidebarAdmin sidebar;
+
+        private Uc_sidebarSinhVien uc_sidebarSinhVien1;
     }
 }

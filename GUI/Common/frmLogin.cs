@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL_LTTQ.GUI.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace BTL_LTTQ.Common
 {
     public partial class frmLogin : Form
     {
+        private bool isLoggedIn = false;
         public frmLogin()
         {
             InitializeComponent();
@@ -44,6 +46,17 @@ namespace BTL_LTTQ.Common
         private void pnLayout_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+            isLoggedIn = true;
+            if (isLoggedIn)
+            {
+                FrmQLSV frmQlsv = new FrmQLSV(this);
+                frmQlsv.Show();
+                this.Hide();
+            }
         }
     }
 }

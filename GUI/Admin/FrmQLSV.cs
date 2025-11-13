@@ -13,6 +13,7 @@ namespace BTL_LTTQ.GUI.Admin
 {
     public partial class FrmQLSV : Form
     {
+        private Form frmLoginInstance;
         // Các UserControl
         private Uc_TrangChuAdmin uc_trangChuAdmin;
         private Uc_SinhVienAdmin uc_sinhVienAdmin;
@@ -58,12 +59,17 @@ namespace BTL_LTTQ.GUI.Admin
             uc_trangChuAdmin.BringToFront();
         }
 
-        public FrmQLSV()
+        public FrmQLSV(Form frmLoginInstance)
         {
             InitializeComponent();
             KhoiTaoUserControls();
-
-
+            this.Resize += FrmAdmin_Resize;
+            this.frmLoginInstance = frmLoginInstance;
+            this.FormClosed += FrmQLSV_FormClosed;
+        }
+        private void FrmAdmin_Resize(object sender, EventArgs e)
+        {
+            uc_sidebarAdmin1.AutoAdjustByWindowSize(this.Width);
         }
 
         private void Sidebar_MenuClicked(object sender, string menuName)
@@ -97,6 +103,13 @@ namespace BTL_LTTQ.GUI.Admin
                 case "Khoa":
                     uc = uc_khoaAdmin;
                     break;
+                case "DangXuat":
+                    if (frmLoginInstance != null)
+                    {
+                        frmLoginInstance.Show();
+                    }
+                    this.Close();
+                    break;
                 default:
                     uc = uc_trangChuAdmin;
                     break;
@@ -105,7 +118,7 @@ namespace BTL_LTTQ.GUI.Admin
             if (uc != null)
             {
                 uc.Visible = true;
-                uc.BringToFront(); // ✅ gọi BringToFront ở Form cha
+                uc.BringToFront(); // gọi BringToFront ở Form cha
             }
         }
 
@@ -123,6 +136,14 @@ namespace BTL_LTTQ.GUI.Admin
         private void uc_sidebarAdmin1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmQLSV_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (frmLoginInstance != null && !frmLoginInstance.Visible)
+            {
+                frmLoginInstance.Close();
+            }
         }
     }
 }

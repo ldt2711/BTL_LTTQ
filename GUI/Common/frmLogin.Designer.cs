@@ -128,6 +128,7 @@
             this.btLogin.TabIndex = 7;
             this.btLogin.Text = "Đăng nhập";
             this.btLogin.UseVisualStyleBackColor = false;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
             // lBQuenMatKhau
             // 
