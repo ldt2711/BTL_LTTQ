@@ -16,5 +16,10 @@ namespace BTL_LTTQ.GUI.SinhVien
         {
             InitializeComponent();
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
