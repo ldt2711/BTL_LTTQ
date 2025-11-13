@@ -102,34 +102,24 @@ namespace BTL_LTTQ.GUI.Admin
                 else yeu++;
             }
 
-            // Hiển thị lên chart
-
-            if (chartHocLuc.Series.IndexOf("Series1") >= 0 && chartHocLuc.Series["Series1"].ChartType == SeriesChartType.Pie)
-            {
-                // Lặp ngược qua các điểm dữ liệu để xóa các điểm có giá trị bằng 0
-                for (int i = chartHocLuc.Series["Series1"].Points.Count - 1; i >= 0; i--)
-                {
-                    // YValues[0] là giá trị chính được dùng để tính kích thước lát cắt
-                    double yValue = chartHocLuc.Series["Series1"].Points[i].YValues[0];
-
-                    if (yValue == 0)
-                    {
-                        chartHocLuc.Series["Series1"].Points.RemoveAt(i);
-                    }
-                }
-            }
-
+            // Hiển thị lên chart            
             chartHocLuc.Series.Clear();
             var s = chartHocLuc.Series.Add("Học lực");
             s.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             s.IsValueShownAsLabel = true;
-            s.LabelFormat = "P0";
-            s["PieLabelStyle"] = "Outside";
-            s.LegendText = "#VALX: #VALY";
-            var pointGioi = s.Points.AddXY("Giỏi", gioi);
+            s.Label = "#VALX: #PERCENT{P1}";    // 👈 Hiển thị phần trăm chính xác
+            s.LegendText = "#VALX (#VALY)";     // 👈 Hiển thị tên và số lượng trong chú thích
+            s["PieLabelStyle"] = "Outside";     // 👈 Đưa nhãn ra ngoài
+            s["PieLineColor"] = "Gray";         // 👈 Kẻ đường nối nhãn
+            s.Points.AddXY("Giỏi", gioi);
             s.Points.AddXY("Khá", kha);
             s.Points.AddXY("Trung bình", tb);
-            var pointYeu = s.Points.AddXY("Yếu", yeu);
+            s.Points.AddXY("Yếu", yeu);
+            for (int i = s.Points.Count - 1; i >= 0; i--)
+            {
+                if (s.Points[i].YValues[0] == 0)
+                    s.Points.RemoveAt(i);
+            }
 
         }
     }
