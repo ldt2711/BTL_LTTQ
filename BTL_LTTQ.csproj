@@ -185,6 +185,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\Admin\FrmQLSV.resx">
       <DependentUpon>FrmQLSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +294,28 @@
     </None>
     <None Include="StudentDBDataSet.xss">
       <DependentUpon>StudentDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet1.xsc">
+      <DependentUpon>StudentDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDBDataSet1.xss">
+      <DependentUpon>StudentDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet2.xsc">
+      <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDBDataSet2.xss">
+      <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Utils\Images\bookicon.png" />
     <None Include="Utils\Images\pngwing.com.png" />

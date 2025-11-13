@@ -54,6 +54,38 @@ namespace WinFormsApp.DAL
                 return dt;
             }
         }
+        //lấy SV theo Khoa
+        public static DataTable GetSinhVienTheoKhoa(string maKhoa)
+        {
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            {
+                string query = @"
+            SELECT 
+                MaSV, 
+                HoTen, 
+                NgaySinh, 
+                GioiTinh, 
+                NoiSinh,
+                GioiTinh,
+                Lop,
+                MaKhoa,
+                MaTK
+            FROM SINHVIEN
+            WHERE MaKhoa = @MaKhoa";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaKhoa", maKhoa);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    return dt;
+                }
+            }
+        }
+
 
         // ✅ Hàm lấy thống kê GPA theo trọng số tín chỉ
         public static DataTable GetThongKeHocLuc(string filterType1, string value1, string filterType2, string value2)
