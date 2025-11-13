@@ -15,6 +15,8 @@ namespace BTL_LTTQ.GUI.Admin
         public Uc_TrangChuAdmin()
         {
             InitializeComponent();
+  
         }
+
     }
 }

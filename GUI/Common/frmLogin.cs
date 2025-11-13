@@ -58,5 +58,10 @@ namespace BTL_LTTQ.Common
                 this.Hide();
             }
         }
+
+        private void lbWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
