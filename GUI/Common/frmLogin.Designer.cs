@@ -80,9 +80,9 @@
             // tBTenTaiKhoan
             // 
             this.tBTenTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tBTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBTenTaiKhoan.Location = new System.Drawing.Point(15, 140);
-            this.tBTenTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBTenTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.tBTenTaiKhoan.Name = "tBTenTaiKhoan";
             this.tBTenTaiKhoan.Size = new System.Drawing.Size(328, 23);
             this.tBTenTaiKhoan.TabIndex = 3;
@@ -93,7 +93,7 @@
             this.tBMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBMatKhau.Location = new System.Drawing.Point(13, 222);
-            this.tBMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.tBMatKhau.Name = "tBMatKhau";
             this.tBMatKhau.Size = new System.Drawing.Size(330, 23);
             this.tBMatKhau.TabIndex = 4;
@@ -108,9 +108,9 @@
             this.gBDangNhap.Controls.Add(this.lbMatKhau);
             this.gBDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
             this.gBDangNhap.Location = new System.Drawing.Point(725, 0);
-            this.gBDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gBDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.gBDangNhap.Name = "gBDangNhap";
-            this.gBDangNhap.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gBDangNhap.Padding = new System.Windows.Forms.Padding(4);
             this.gBDangNhap.Size = new System.Drawing.Size(356, 618);
             this.gBDangNhap.TabIndex = 5;
             this.gBDangNhap.TabStop = false;
@@ -150,7 +150,7 @@
             this.pnLayout.Controls.Add(this.pBGraduate);
             this.pnLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLayout.Location = new System.Drawing.Point(0, 0);
-            this.pnLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnLayout.Margin = new System.Windows.Forms.Padding(4);
             this.pnLayout.Name = "pnLayout";
             this.pnLayout.Size = new System.Drawing.Size(725, 618);
             this.pnLayout.TabIndex = 6;
@@ -172,7 +172,7 @@
             // 
             this.pBGraduate.Image = global::BTL_LTTQ.Properties.Resources.pngwing_com;
             this.pBGraduate.Location = new System.Drawing.Point(227, 88);
-            this.pBGraduate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBGraduate.Margin = new System.Windows.Forms.Padding(4);
             this.pBGraduate.Name = "pBGraduate";
             this.pBGraduate.Size = new System.Drawing.Size(260, 194);
             this.pBGraduate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -187,7 +187,7 @@
             this.Controls.Add(this.pnLayout);
             this.Controls.Add(this.gBDangNhap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
