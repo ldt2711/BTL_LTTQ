@@ -72,8 +72,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\LopHocBUS.cs" />
+    <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="DAL\LopHocDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="Database\AppSetting.cs" />
+    <Compile Include="Database\BaoCaoDiem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Admin\FrmQLSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,11 +227,25 @@
     <EmbeddedResource Include="GUI\SinhVien\Uc_sidebarSinhVien.resx">
       <DependentUpon>Uc_sidebarSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\Uc_TrangChuSinhVien.resx">
+      <DependentUpon>Uc_TrangChuSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Database\BaoCaoDiem.xsc">
+      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
+    </None>
+    <None Include="Database\BaoCaoDiem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaoCaoDiem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Database\BaoCaoDiem.xss">
+      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
