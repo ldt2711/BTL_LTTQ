@@ -432,7 +432,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maTKDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
-        //private StudentDBDataSet studentDBDataSet;
-        //private StudentDBDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
+        private StudentDBDataSet studentDBDataSet;
+        private StudentDBDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
     }
 }
