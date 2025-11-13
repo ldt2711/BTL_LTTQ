@@ -1,5 +1,4 @@
-﻿using BTL_LTTQ.GUI.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

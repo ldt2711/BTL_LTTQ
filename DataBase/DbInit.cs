@@ -28,7 +28,9 @@ namespace WinFormsApp.Helpers
                     TenHP NVARCHAR(100),
                     SoTin INT,
                     TrongSoQT FLOAT,
-                    TrongSoKTHP FLOAT
+                    TrongSoKTHP FLOAT,
+                    HocKy INT,
+                    NamHoc INT
                 );
 
                 CREATE TABLE SINHVIEN (

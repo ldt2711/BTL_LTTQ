@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,14 +74,11 @@
   <ItemGroup>
     <Compile Include="BUS\LopHocBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
+    <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="DAL\LopHocDAL.cs" />
     <Compile Include="DAL\TaiKhoanDAL.cs" />
+    <Compile Include="DAL\ThongKeDAL.cs" />
     <Compile Include="Database\AppSetting.cs" />
-    <Compile Include="Database\BaoCaoDiem.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Admin\FrmQLSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +135,6 @@
     </Compile>
     <Compile Include="GUI\Common\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Common\frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Common\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Admin\Uc_sidebarAdmin.cs">
       <SubType>UserControl</SubType>
@@ -215,9 +207,6 @@
     <EmbeddedResource Include="GUI\Common\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Common\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\Uc_sidebarAdmin.resx">
       <DependentUpon>Uc_sidebarAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,17 +224,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Database\BaoCaoDiem.xsc">
-      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
-    </None>
-    <None Include="Database\BaoCaoDiem.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaoCaoDiem.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Database\BaoCaoDiem.xss">
-      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
