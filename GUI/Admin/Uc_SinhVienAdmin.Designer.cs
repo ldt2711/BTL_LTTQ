@@ -30,10 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.dgSinhVien = new System.Windows.Forms.DataGridView();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDBDataSet = new BTL_LTTQ.StudentDBDataSet();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtLop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSV = new System.Windows.Forms.TextBox();
@@ -49,23 +62,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.sINHVIENTableAdapter = new BTL_LTTQ.StudentDBDataSetTableAdapters.SINHVIENTableAdapter();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnXuatFile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
@@ -77,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnXuatFile);
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnSua);
@@ -91,6 +93,62 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1092, 887);
             this.panel1.TabIndex = 1;
+            // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnTim.ForeColor = System.Drawing.Color.Transparent;
+            this.btnTim.Location = new System.Drawing.Point(723, 599);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(107, 36);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(504, 599);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(107, 36);
+            this.btnXoa.TabIndex = 5;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(273, 599);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(107, 36);
+            this.btnSua.TabIndex = 4;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(43, 599);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(107, 36);
+            this.btnThem.TabIndex = 3;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgSinhVien
             // 
@@ -115,6 +173,70 @@
             this.dgSinhVien.TabIndex = 2;
             this.dgSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSinhVien_CellClick);
             this.dgSinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSinhVien_CellClick);
+            // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "MaSV";
+            this.MaSV.MinimumWidth = 6;
+            this.MaSV.Name = "MaSV";
+            this.MaSV.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "HoTen";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 125;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "NgaySinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 125;
+            // 
+            // NoiSinh
+            // 
+            this.NoiSinh.DataPropertyName = "NoiSinh";
+            this.NoiSinh.HeaderText = "NoiSinh";
+            this.NoiSinh.MinimumWidth = 6;
+            this.NoiSinh.Name = "NoiSinh";
+            this.NoiSinh.Width = 125;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "GioiTinh";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 125;
+            // 
+            // Lop
+            // 
+            this.Lop.DataPropertyName = "Lop";
+            this.Lop.HeaderText = "Lop";
+            this.Lop.MinimumWidth = 6;
+            this.Lop.Name = "Lop";
+            this.Lop.Width = 125;
+            // 
+            // MaKhoa
+            // 
+            this.MaKhoa.DataPropertyName = "MaKhoa";
+            this.MaKhoa.HeaderText = "MaKhoa";
+            this.MaKhoa.MinimumWidth = 6;
+            this.MaKhoa.Name = "MaKhoa";
+            this.MaKhoa.Width = 125;
+            // 
+            // MaTK
+            // 
+            this.MaTK.DataPropertyName = "MaTK";
+            this.MaTK.HeaderText = "MaTK";
+            this.MaTK.MinimumWidth = 6;
+            this.MaTK.Name = "MaTK";
+            this.MaTK.Width = 125;
             // 
             // sINHVIENBindingSource
             // 
@@ -162,6 +284,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1092, 208);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(773, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 30);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Nhập Tên hoặc Mã SV";
             // 
             // txtLop
             // 
@@ -269,7 +402,7 @@
             // 
             this.cmbKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbKhoa.FormattingEnabled = true;
-            this.cmbKhoa.Location = new System.Drawing.Point(866, 20);
+            this.cmbKhoa.Location = new System.Drawing.Point(866, 22);
             this.cmbKhoa.Name = "cmbKhoa";
             this.cmbKhoa.Size = new System.Drawing.Size(209, 28);
             this.cmbKhoa.TabIndex = 11;
@@ -295,13 +428,27 @@
             // btnReset
             // 
             this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnReset.ForeColor = System.Drawing.Color.Transparent;
             this.btnReset.Location = new System.Drawing.Point(866, 156);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(143, 33);
             this.btnReset.TabIndex = 14;
             this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // txtTim
+            // 
+            this.txtTim.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(866, 90);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(223, 26);
+            this.txtTim.TabIndex = 15;
+            this.txtTim.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel2
             // 
@@ -332,130 +479,19 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // btnThem
+            // btnXuatFile
             // 
-            this.btnThem.Location = new System.Drawing.Point(43, 599);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(107, 36);
-            this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(338, 599);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(107, 36);
-            this.btnSua.TabIndex = 4;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(633, 599);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(107, 36);
-            this.btnXoa.TabIndex = 5;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(923, 599);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(107, 36);
-            this.btnTim.TabIndex = 6;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // MaSV
-            // 
-            this.MaSV.DataPropertyName = "MaSV";
-            this.MaSV.HeaderText = "MaSV";
-            this.MaSV.MinimumWidth = 6;
-            this.MaSV.Name = "MaSV";
-            this.MaSV.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "HoTen";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 125;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "NgaySinh";
-            this.NgaySinh.MinimumWidth = 6;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 125;
-            // 
-            // NoiSinh
-            // 
-            this.NoiSinh.DataPropertyName = "NoiSinh";
-            this.NoiSinh.HeaderText = "NoiSinh";
-            this.NoiSinh.MinimumWidth = 6;
-            this.NoiSinh.Name = "NoiSinh";
-            this.NoiSinh.Width = 125;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "GioiTinh";
-            this.GioiTinh.MinimumWidth = 6;
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Width = 125;
-            // 
-            // Lop
-            // 
-            this.Lop.DataPropertyName = "Lop";
-            this.Lop.HeaderText = "Lop";
-            this.Lop.MinimumWidth = 6;
-            this.Lop.Name = "Lop";
-            this.Lop.Width = 125;
-            // 
-            // MaKhoa
-            // 
-            this.MaKhoa.DataPropertyName = "MaKhoa";
-            this.MaKhoa.HeaderText = "MaKhoa";
-            this.MaKhoa.MinimumWidth = 6;
-            this.MaKhoa.Name = "MaKhoa";
-            this.MaKhoa.Width = 125;
-            // 
-            // MaTK
-            // 
-            this.MaTK.DataPropertyName = "MaTK";
-            this.MaTK.HeaderText = "MaTK";
-            this.MaTK.MinimumWidth = 6;
-            this.MaTK.Name = "MaTK";
-            this.MaTK.Width = 125;
-            // 
-            // txtTim
-            // 
-            this.txtTim.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(866, 90);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(223, 26);
-            this.txtTim.TabIndex = 15;
-            this.txtTim.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(773, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 30);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Nhập Tên hoặc Mã SV";
+            this.btnXuatFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnXuatFile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnXuatFile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnXuatFile.ForeColor = System.Drawing.Color.White;
+            this.btnXuatFile.Location = new System.Drawing.Point(897, 599);
+            this.btnXuatFile.Name = "btnXuatFile";
+            this.btnXuatFile.Size = new System.Drawing.Size(157, 36);
+            this.btnXuatFile.TabIndex = 7;
+            this.btnXuatFile.Text = "Export File";
+            this.btnXuatFile.UseVisualStyleBackColor = false;
+            this.btnXuatFile.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // Uc_SinhVienAdmin
             // 
@@ -516,5 +552,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTK;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnXuatFile;
     }
 }

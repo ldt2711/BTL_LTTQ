@@ -63,7 +63,7 @@
             this.panelTitle.Controls.Add(this.lblTitle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
-            this.panelTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitle.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(936, 75);
             this.panelTitle.TabIndex = 0;
@@ -87,7 +87,7 @@
             this.panelFilter.Controls.Add(this.tableLayoutPanel1);
             this.panelFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFilter.Location = new System.Drawing.Point(0, 75);
-            this.panelFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFilter.Margin = new System.Windows.Forms.Padding(4);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Size = new System.Drawing.Size(936, 98);
             this.panelFilter.TabIndex = 10;
@@ -115,7 +115,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cboHocKy, 5, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -127,7 +127,7 @@
             // 
             this.btnTraCuu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTraCuu.Location = new System.Drawing.Point(818, 27);
-            this.btnTraCuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTraCuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(112, 43);
             this.btnTraCuu.TabIndex = 5;
@@ -139,7 +139,7 @@
             this.cboNamHoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboNamHoc.FormattingEnabled = true;
             this.cboNamHoc.Location = new System.Drawing.Point(639, 4);
-            this.cboNamHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboNamHoc.Margin = new System.Windows.Forms.Padding(4);
             this.cboNamHoc.Name = "cboNamHoc";
             this.cboNamHoc.Size = new System.Drawing.Size(169, 24);
             this.cboNamHoc.TabIndex = 4;
@@ -161,7 +161,7 @@
             this.cboLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboLop.FormattingEnabled = true;
             this.cboLop.Location = new System.Drawing.Point(92, 4);
-            this.cboLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboLop.Margin = new System.Windows.Forms.Padding(4);
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(80, 24);
             this.cboLop.TabIndex = 1;
@@ -207,7 +207,7 @@
             this.cboHocPhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboHocPhan.FormattingEnabled = true;
             this.cboHocPhan.Location = new System.Drawing.Point(268, 4);
-            this.cboHocPhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboHocPhan.Margin = new System.Windows.Forms.Padding(4);
             this.cboHocPhan.Name = "cboHocPhan";
             this.cboHocPhan.Size = new System.Drawing.Size(125, 24);
             this.cboHocPhan.TabIndex = 2;
@@ -217,7 +217,7 @@
             this.cboHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboHocKy.FormattingEnabled = true;
             this.cboHocKy.Location = new System.Drawing.Point(489, 4);
-            this.cboHocKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboHocKy.Margin = new System.Windows.Forms.Padding(4);
             this.cboHocKy.Name = "cboHocKy";
             this.cboHocKy.Size = new System.Drawing.Size(54, 24);
             this.cboHocKy.TabIndex = 3;
@@ -228,7 +228,7 @@
             this.panelBottom.Controls.Add(this.btnXuatBangDiem);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 522);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panelBottom.Size = new System.Drawing.Size(936, 74);
@@ -238,7 +238,7 @@
             // 
             this.btnXuatBangDiem.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnXuatBangDiem.Location = new System.Drawing.Point(802, 12);
-            this.btnXuatBangDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXuatBangDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuatBangDiem.Name = "btnXuatBangDiem";
             this.btnXuatBangDiem.Size = new System.Drawing.Size(121, 50);
             this.btnXuatBangDiem.TabIndex = 6;
@@ -250,7 +250,7 @@
             this.panelDiem.Controls.Add(this.dgvBangDiem);
             this.panelDiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDiem.Location = new System.Drawing.Point(0, 173);
-            this.panelDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDiem.Margin = new System.Windows.Forms.Padding(4);
             this.panelDiem.Name = "panelDiem";
             this.panelDiem.Size = new System.Drawing.Size(936, 349);
             this.panelDiem.TabIndex = 12;
@@ -268,7 +268,7 @@
             this.DiemKTHP});
             this.dgvBangDiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBangDiem.Location = new System.Drawing.Point(0, 0);
-            this.dgvBangDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBangDiem.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBangDiem.Name = "dgvBangDiem";
             this.dgvBangDiem.RowHeadersVisible = false;
             this.dgvBangDiem.RowHeadersWidth = 51;
@@ -323,7 +323,7 @@
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.panelTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Uc_XemDiemSinhVien";
             this.Size = new System.Drawing.Size(936, 596);
             this.panelTitle.ResumeLayout(false);

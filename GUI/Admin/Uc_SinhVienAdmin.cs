@@ -5,12 +5,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp.DAL;
 using WinFormsApp.Helpers;
+using ClosedXML.Excel;
 
 namespace BTL_LTTQ.GUI.Admin
 {
@@ -107,6 +109,10 @@ namespace BTL_LTTQ.GUI.Admin
             // Nếu muốn reset DataGridView về tất cả sinh viên
             dgSinhVien.DataSource = ThongKeDAL.GetTatCaSinhVien();
         }
+
+
+
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             // Lấy dữ liệu từ các control
@@ -256,6 +262,70 @@ namespace BTL_LTTQ.GUI.Admin
                 MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void XuatDataGridViewRaExcel(DataGridView dgv, string filePath)
+        {
+            try
+            {
+                using (var workbook = new XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add("DanhSachSinhVien");
+
+                    // Ghi header
+                    for (int i = 0; i < dgv.Columns.Count; i++)
+                    {
+                        worksheet.Cell(1, i + 1).Value = dgv.Columns[i].HeaderText;
+                        worksheet.Cell(1, i + 1).Style.Font.Bold = true;
+                    }
+
+                    // Ghi dữ liệu
+                    int rowExcel = 2;
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            for (int col = 0; col < dgv.Columns.Count; col++)
+                            {
+                                object cellValue = row.Cells[col].Value;
+                                if (cellValue != null)
+                                {
+                                    // Nếu là DateTime, giữ định dạng ngày
+                                    if (cellValue is DateTime dt)
+                                        worksheet.Cell(rowExcel, col + 1).Value = dt;
+                                    else
+                                        worksheet.Cell(rowExcel, col + 1).Value = cellValue.ToString();
+                                }
+                            }
+                            rowExcel++;
+                        }
+                    }
+
+                    // Tự động điều chỉnh cột
+                    worksheet.Columns().AdjustToContents();
+
+                    // Lưu file
+                    workbook.SaveAs(filePath);
+                }
+
+                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Excel files (*.xlsx)|*.xlsx";
+            saveFile.FileName = "DanhSachSinhVien.xlsx";
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                XuatDataGridViewRaExcel(dgSinhVien, saveFile.FileName);
+            }
+        }
+
 
 
         private void textBox3_TextChanged(object sender, EventArgs e)
