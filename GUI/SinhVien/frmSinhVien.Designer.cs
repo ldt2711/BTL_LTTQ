@@ -35,17 +35,19 @@
             // 
             this.uc_sidebarSinhVien1.Dock = System.Windows.Forms.DockStyle.Left;
             this.uc_sidebarSinhVien1.Location = new System.Drawing.Point(0, 0);
+            this.uc_sidebarSinhVien1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.uc_sidebarSinhVien1.Name = "uc_sidebarSinhVien1";
-            this.uc_sidebarSinhVien1.Size = new System.Drawing.Size(100, 656);
+            this.uc_sidebarSinhVien1.Size = new System.Drawing.Size(133, 807);
             this.uc_sidebarSinhVien1.TabIndex = 0;
             this.uc_sidebarSinhVien1.MenuClicked += new System.EventHandler<string>(this.Sidebar_MenuClicked);
             // 
             // frmSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 656);
+            this.ClientSize = new System.Drawing.Size(1149, 807);
             this.Controls.Add(this.uc_sidebarSinhVien1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSinhVien";
             this.Text = "frmSinhVien";
             this.ResumeLayout(false);

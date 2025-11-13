@@ -11,7 +11,7 @@ namespace WinFormsApp.Helpers
 
         // ✅ Đường dẫn đầy đủ đến file .mdf
         public static readonly string DatabaseFile =
-            Path.Combine(DatabaseFolder, "StudentDB.mdf");
+            Path.Combine(DatabaseFolder, "StudentDB1.mdf");
 
         // ✅ Connection string kết nối LocalDB
         public static readonly string ConnectionString =
