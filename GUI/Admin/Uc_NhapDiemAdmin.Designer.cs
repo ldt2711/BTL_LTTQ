@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbTieuDe = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnBoQua = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnInRaExcel = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnBoQua = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnSua = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTieuDe = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,25 +87,38 @@
             this.panel1.Size = new System.Drawing.Size(1419, 649);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // dataGridView1
             // 
-            this.panel2.Controls.Add(this.lbTieuDe);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1419, 180);
-            this.panel2.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 492);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1419, 57);
+            this.dataGridView1.TabIndex = 4;
             // 
-            // lbTieuDe
+            // panel5
             // 
-            this.lbTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbTieuDe.Font = new System.Drawing.Font("Verdana", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTieuDe.Location = new System.Drawing.Point(0, 0);
-            this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(1419, 97);
-            this.lbTieuDe.TabIndex = 0;
-            this.lbTieuDe.Text = "Quản lý điểm sinh viên";
-            this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel5.Controls.Add(this.btnInRaExcel);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 549);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(20);
+            this.panel5.Size = new System.Drawing.Size(1419, 100);
+            this.panel5.TabIndex = 3;
+            // 
+            // btnInRaExcel
+            // 
+            this.btnInRaExcel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnInRaExcel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInRaExcel.Location = new System.Drawing.Point(1272, 20);
+            this.btnInRaExcel.Name = "btnInRaExcel";
+            this.btnInRaExcel.Size = new System.Drawing.Size(127, 60);
+            this.btnInRaExcel.TabIndex = 4;
+            this.btnInRaExcel.Text = "In ra Excel";
+            this.btnInRaExcel.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -116,142 +129,111 @@
             this.panel3.Size = new System.Drawing.Size(1419, 108);
             this.panel3.TabIndex = 2;
             // 
-            // iconButton1
+            // tableLayoutPanel2
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(30, 15);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(96, 35);
-            this.iconButton1.TabIndex = 15;
-            this.iconButton1.Text = "Lọc";
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.41367F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.58633F));
+            this.tableLayoutPanel2.Controls.Add(this.panel6, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel7, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel8, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel9, 3, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.37931F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1419, 87);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // label6
+            // panel6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(602, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 55);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Lớp:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.panel6.Controls.Add(this.btnThem);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(162, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(18);
+            this.panel6.Size = new System.Drawing.Size(162, 81);
+            this.panel6.TabIndex = 0;
             // 
-            // label5
+            // btnThem
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(602, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 56);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Tên SV:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThem.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(18, 18);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(126, 45);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // panel7
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(288, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 24);
-            this.textBox4.TabIndex = 7;
+            this.panel7.Controls.Add(this.btnBoQua);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(675, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(18);
+            this.panel7.Size = new System.Drawing.Size(169, 81);
+            this.panel7.TabIndex = 2;
             // 
-            // label4
+            // btnBoQua
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(279, 38);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Điểm KTHP:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnBoQua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBoQua.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBoQua.Location = new System.Drawing.Point(18, 18);
+            this.btnBoQua.Name = "btnBoQua";
+            this.btnBoQua.Size = new System.Drawing.Size(133, 45);
+            this.btnBoQua.TabIndex = 3;
+            this.btnBoQua.Text = "Bỏ qua";
+            this.btnBoQua.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // panel8
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(288, 114);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 24);
-            this.textBox3.TabIndex = 5;
+            this.panel8.Controls.Add(this.btnSua);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(330, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(18);
+            this.panel8.Size = new System.Drawing.Size(169, 81);
+            this.panel8.TabIndex = 3;
             // 
-            // label2
+            // btnSua
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 55);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Điểm QT:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSua.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(18, 18);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(133, 45);
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // panel9
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(288, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 24);
-            this.textBox2.TabIndex = 3;
+            this.panel9.Controls.Add(this.btnXoa);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(505, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(18);
+            this.panel9.Size = new System.Drawing.Size(164, 81);
+            this.panel9.TabIndex = 4;
             // 
-            // label3
+            // btnXoa
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 55);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mã HP:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(288, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 24);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 56);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã SV:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(768, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(171, 26);
-            this.comboBox3.TabIndex = 12;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(768, 59);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(171, 26);
-            this.comboBox5.TabIndex = 14;
+            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoa.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(18, 18);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(128, 45);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -286,6 +268,129 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1419, 204);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // comboBox5
+            // 
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(768, 59);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(171, 26);
+            this.comboBox5.TabIndex = 14;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(768, 3);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(171, 26);
+            this.comboBox3.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(279, 56);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã SV:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(288, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(213, 24);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(279, 55);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mã HP:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(288, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(213, 24);
+            this.textBox2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(279, 55);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Điểm QT:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(288, 114);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(213, 24);
+            this.textBox3.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(279, 38);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Điểm KTHP:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(288, 169);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(213, 24);
+            this.textBox4.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(602, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 56);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tên SV:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(602, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 55);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Lớp:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.iconButton1);
@@ -295,144 +400,39 @@
             this.panel4.Size = new System.Drawing.Size(156, 50);
             this.panel4.TabIndex = 15;
             // 
-            // btnThem
+            // iconButton1
             // 
-            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThem.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(18, 18);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(126, 45);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.iconButton1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(30, 15);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(96, 35);
+            this.iconButton1.TabIndex = 15;
+            this.iconButton1.Text = "Lọc";
+            this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // btnSua
+            // panel2
             // 
-            this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSua.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(18, 18);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(133, 45);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.lbTieuDe);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1419, 180);
+            this.panel2.TabIndex = 0;
             // 
-            // btnXoa
+            // lbTieuDe
             // 
-            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXoa.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(18, 18);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(128, 45);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnBoQua
-            // 
-            this.btnBoQua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBoQua.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBoQua.Location = new System.Drawing.Point(18, 18);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(133, 45);
-            this.btnBoQua.TabIndex = 3;
-            this.btnBoQua.Text = "Bỏ qua";
-            this.btnBoQua.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnInRaExcel);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 549);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(20);
-            this.panel5.Size = new System.Drawing.Size(1419, 100);
-            this.panel5.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 492);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1419, 57);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // btnInRaExcel
-            // 
-            this.btnInRaExcel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnInRaExcel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInRaExcel.Location = new System.Drawing.Point(1272, 20);
-            this.btnInRaExcel.Name = "btnInRaExcel";
-            this.btnInRaExcel.Size = new System.Drawing.Size(127, 60);
-            this.btnInRaExcel.TabIndex = 4;
-            this.btnInRaExcel.Text = "In ra Excel";
-            this.btnInRaExcel.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 7;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.41367F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.58633F));
-            this.tableLayoutPanel2.Controls.Add(this.panel6, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel7, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel8, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel9, 3, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.37931F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1419, 87);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnThem);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(162, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(18);
-            this.panel6.Size = new System.Drawing.Size(162, 81);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnBoQua);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(675, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(18);
-            this.panel7.Size = new System.Drawing.Size(169, 81);
-            this.panel7.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btnSua);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(330, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(18);
-            this.panel8.Size = new System.Drawing.Size(169, 81);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btnXoa);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(505, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(18);
-            this.panel9.Size = new System.Drawing.Size(164, 81);
-            this.panel9.TabIndex = 4;
+            this.lbTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbTieuDe.Font = new System.Drawing.Font("Verdana", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.lbTieuDe.Name = "lbTieuDe";
+            this.lbTieuDe.Size = new System.Drawing.Size(1419, 97);
+            this.lbTieuDe.TabIndex = 0;
+            this.lbTieuDe.Text = "Quản lý điểm sinh viên";
+            this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Uc_NhapDiemAdmin
             // 
@@ -442,18 +442,18 @@
             this.Name = "Uc_NhapDiemAdmin";
             this.Size = new System.Drawing.Size(1419, 649);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
