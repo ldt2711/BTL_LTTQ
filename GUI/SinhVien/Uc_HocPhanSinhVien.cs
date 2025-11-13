@@ -21,5 +21,25 @@ namespace BTL_LTTQ.GUI.SinhVien
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lBLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lBTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
