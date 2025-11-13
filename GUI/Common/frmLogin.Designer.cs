@@ -48,9 +48,10 @@
             // 
             this.lbLogin.AutoSize = true;
             this.lbLogin.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLogin.Location = new System.Drawing.Point(5, 18);
+            this.lbLogin.Location = new System.Drawing.Point(4, 15);
+            this.lbLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(227, 46);
+            this.lbLogin.Size = new System.Drawing.Size(181, 37);
             this.lbLogin.TabIndex = 0;
             this.lbLogin.Text = "ĐĂNG NHẬP";
             this.lbLogin.Click += new System.EventHandler(this.lbLogin_Click);
@@ -59,9 +60,10 @@
             // 
             this.lbTenTaiKhoan.AutoSize = true;
             this.lbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenTaiKhoan.Location = new System.Drawing.Point(7, 108);
+            this.lbTenTaiKhoan.Location = new System.Drawing.Point(5, 88);
+            this.lbTenTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTenTaiKhoan.Name = "lbTenTaiKhoan";
-            this.lbTenTaiKhoan.Size = new System.Drawing.Size(162, 32);
+            this.lbTenTaiKhoan.Size = new System.Drawing.Size(126, 25);
             this.lbTenTaiKhoan.TabIndex = 1;
             this.lbTenTaiKhoan.Text = "Tên tài khoản";
             this.lbTenTaiKhoan.Click += new System.EventHandler(this.lbTenTaiKhoan_Click);
@@ -70,9 +72,10 @@
             // 
             this.lbMatKhau.AutoSize = true;
             this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatKhau.Location = new System.Drawing.Point(6, 186);
+            this.lbMatKhau.Location = new System.Drawing.Point(4, 151);
+            this.lbMatKhau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(119, 32);
+            this.lbMatKhau.Size = new System.Drawing.Size(94, 25);
             this.lbMatKhau.TabIndex = 2;
             this.lbMatKhau.Text = "Mật khẩu";
             this.lbMatKhau.Click += new System.EventHandler(this.lbMatKhau_Click);
@@ -81,10 +84,9 @@
             // 
             this.tBTenTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBTenTaiKhoan.Location = new System.Drawing.Point(15, 140);
-            this.tBTenTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
+            this.tBTenTaiKhoan.Location = new System.Drawing.Point(11, 114);
             this.tBTenTaiKhoan.Name = "tBTenTaiKhoan";
-            this.tBTenTaiKhoan.Size = new System.Drawing.Size(328, 23);
+            this.tBTenTaiKhoan.Size = new System.Drawing.Size(246, 19);
             this.tBTenTaiKhoan.TabIndex = 3;
             this.tBTenTaiKhoan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -92,11 +94,11 @@
             // 
             this.tBMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBMatKhau.Location = new System.Drawing.Point(13, 222);
-            this.tBMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.tBMatKhau.Location = new System.Drawing.Point(10, 180);
             this.tBMatKhau.Name = "tBMatKhau";
-            this.tBMatKhau.Size = new System.Drawing.Size(330, 23);
+            this.tBMatKhau.Size = new System.Drawing.Size(248, 19);
             this.tBMatKhau.TabIndex = 4;
+            this.tBMatKhau.UseSystemPasswordChar = true;
             // 
             // gBDangNhap
             // 
@@ -107,11 +109,9 @@
             this.gBDangNhap.Controls.Add(this.lbTenTaiKhoan);
             this.gBDangNhap.Controls.Add(this.lbMatKhau);
             this.gBDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gBDangNhap.Location = new System.Drawing.Point(725, 0);
-            this.gBDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.gBDangNhap.Location = new System.Drawing.Point(544, 0);
             this.gBDangNhap.Name = "gBDangNhap";
-            this.gBDangNhap.Padding = new System.Windows.Forms.Padding(4);
-            this.gBDangNhap.Size = new System.Drawing.Size(356, 618);
+            this.gBDangNhap.Size = new System.Drawing.Size(267, 502);
             this.gBDangNhap.TabIndex = 5;
             this.gBDangNhap.TabStop = false;
             this.gBDangNhap.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -124,10 +124,10 @@
             this.btLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btLogin.Location = new System.Drawing.Point(85, 333);
-            this.btLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btLogin.Location = new System.Drawing.Point(64, 271);
+            this.btLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(182, 54);
+            this.btLogin.Size = new System.Drawing.Size(136, 44);
             this.btLogin.TabIndex = 7;
             this.btLogin.Text = "Đăng nhập";
             this.btLogin.UseVisualStyleBackColor = false;
@@ -150,9 +150,8 @@
             this.pnLayout.Controls.Add(this.pBGraduate);
             this.pnLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLayout.Location = new System.Drawing.Point(0, 0);
-            this.pnLayout.Margin = new System.Windows.Forms.Padding(4);
             this.pnLayout.Name = "pnLayout";
-            this.pnLayout.Size = new System.Drawing.Size(725, 618);
+            this.pnLayout.Size = new System.Drawing.Size(544, 502);
             this.pnLayout.TabIndex = 6;
             this.pnLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLayout_Paint);
             // 
@@ -160,10 +159,9 @@
             // 
             this.lbWelcome.AutoSize = true;
             this.lbWelcome.Font = new System.Drawing.Font("Segoe UI Semibold", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWelcome.Location = new System.Drawing.Point(80, 307);
-            this.lbWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbWelcome.Location = new System.Drawing.Point(60, 249);
             this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(560, 89);
+            this.lbWelcome.Size = new System.Drawing.Size(451, 72);
             this.lbWelcome.TabIndex = 1;
             this.lbWelcome.Text = "Quản lý sinh viên";
             this.lbWelcome.Click += new System.EventHandler(this.lbWelcome_Click);
@@ -171,23 +169,21 @@
             // pBGraduate
             // 
             this.pBGraduate.Image = global::BTL_LTTQ.Properties.Resources.pngwing_com;
-            this.pBGraduate.Location = new System.Drawing.Point(227, 88);
-            this.pBGraduate.Margin = new System.Windows.Forms.Padding(4);
+            this.pBGraduate.Location = new System.Drawing.Point(170, 72);
             this.pBGraduate.Name = "pBGraduate";
-            this.pBGraduate.Size = new System.Drawing.Size(260, 194);
+            this.pBGraduate.Size = new System.Drawing.Size(195, 158);
             this.pBGraduate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBGraduate.TabIndex = 0;
             this.pBGraduate.TabStop = false;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 618);
+            this.ClientSize = new System.Drawing.Size(811, 502);
             this.Controls.Add(this.pnLayout);
             this.Controls.Add(this.gBDangNhap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
