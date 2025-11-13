@@ -1,5 +1,4 @@
-﻿using BTL_LTTQ.GUI.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,6 +65,12 @@ namespace BTL_LTTQ.GUI.Admin
             this.Resize += FrmAdmin_Resize;
             this.frmLoginInstance = frmLoginInstance;
             this.FormClosed += FrmQLSV_FormClosed;
+        }
+        public FrmQLSV()
+        {
+            InitializeComponent();
+            KhoiTaoUserControls();
+
         }
         private void FrmAdmin_Resize(object sender, EventArgs e)
         {

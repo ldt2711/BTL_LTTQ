@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnTTCN = new FontAwesome.Sharp.IconButton();
             this.btnXemDiem = new FontAwesome.Sharp.IconButton();
             this.btnHocPhan = new FontAwesome.Sharp.IconButton();
             this.btnTrangChu = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelLogo.SuspendLayout();
-            this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLogo
@@ -48,10 +48,38 @@
             this.panelLogo.Controls.Add(this.btnMenu);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(100, 123);
+            this.panelLogo.Size = new System.Drawing.Size(133, 151);
             this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BTL_LTTQ.Properties.Resources.pngwing_com;
+            this.pictureBox1.Location = new System.Drawing.Point(183, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.AlignJustify;
+            this.btnMenu.IconColor = System.Drawing.Color.White;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.IconSize = 30;
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(125, 74);
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // panelMenu
             // 
@@ -65,9 +93,9 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(100, 551);
+            this.panelMenu.Size = new System.Drawing.Size(133, 678);
             this.panelMenu.TabIndex = 4;
             // 
             // btnDangXuat
@@ -82,11 +110,11 @@
             this.btnDangXuat.IconColor = System.Drawing.Color.White;
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDangXuat.IconSize = 30;
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 491);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 604);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnDangXuat.Size = new System.Drawing.Size(100, 60);
+            this.btnDangXuat.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
+            this.btnDangXuat.Size = new System.Drawing.Size(133, 74);
             this.btnDangXuat.TabIndex = 18;
             this.btnDangXuat.Tag = "Đăng xuất";
             this.btnDangXuat.Text = "  Đăng xuất";
@@ -107,11 +135,11 @@
             this.btnTTCN.IconColor = System.Drawing.Color.White;
             this.btnTTCN.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTTCN.IconSize = 30;
-            this.btnTTCN.Location = new System.Drawing.Point(0, 303);
-            this.btnTTCN.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTTCN.Location = new System.Drawing.Point(0, 373);
+            this.btnTTCN.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnTTCN.Name = "btnTTCN";
-            this.btnTTCN.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnTTCN.Size = new System.Drawing.Size(100, 60);
+            this.btnTTCN.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
+            this.btnTTCN.Size = new System.Drawing.Size(133, 74);
             this.btnTTCN.TabIndex = 16;
             this.btnTTCN.Tag = "Thông Tin Cá Nhân";
             this.btnTTCN.Text = "  Thông Tin Cá Nhân";
@@ -131,11 +159,11 @@
             this.btnXemDiem.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             this.btnXemDiem.IconColor = System.Drawing.Color.White;
             this.btnXemDiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXemDiem.Location = new System.Drawing.Point(0, 243);
-            this.btnXemDiem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXemDiem.Location = new System.Drawing.Point(0, 299);
+            this.btnXemDiem.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnXemDiem.Name = "btnXemDiem";
-            this.btnXemDiem.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnXemDiem.Size = new System.Drawing.Size(100, 60);
+            this.btnXemDiem.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnXemDiem.Size = new System.Drawing.Size(133, 74);
             this.btnXemDiem.TabIndex = 12;
             this.btnXemDiem.Tag = "Xem Điểm";
             this.btnXemDiem.Text = "  Xem Điểm";
@@ -155,11 +183,11 @@
             this.btnHocPhan.IconChar = FontAwesome.Sharp.IconChar.BookOpenReader;
             this.btnHocPhan.IconColor = System.Drawing.Color.White;
             this.btnHocPhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHocPhan.Location = new System.Drawing.Point(0, 183);
-            this.btnHocPhan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHocPhan.Location = new System.Drawing.Point(0, 225);
+            this.btnHocPhan.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnHocPhan.Name = "btnHocPhan";
-            this.btnHocPhan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHocPhan.Size = new System.Drawing.Size(100, 60);
+            this.btnHocPhan.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnHocPhan.Size = new System.Drawing.Size(133, 74);
             this.btnHocPhan.TabIndex = 11;
             this.btnHocPhan.Tag = "Học Phần";
             this.btnHocPhan.Text = "  Học Phần";
@@ -179,11 +207,11 @@
             this.btnTrangChu.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
             this.btnTrangChu.IconColor = System.Drawing.Color.White;
             this.btnTrangChu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTrangChu.Location = new System.Drawing.Point(0, 123);
-            this.btnTrangChu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTrangChu.Location = new System.Drawing.Point(0, 151);
+            this.btnTrangChu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnTrangChu.Size = new System.Drawing.Size(100, 60);
+            this.btnTrangChu.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnTrangChu.Size = new System.Drawing.Size(133, 74);
             this.btnTrangChu.TabIndex = 9;
             this.btnTrangChu.Tag = "Trang Chủ";
             this.btnTrangChu.Text = "  Trang Chủ";
@@ -192,43 +220,17 @@
             this.btnTrangChu.UseVisualStyleBackColor = true;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BTL_LTTQ.Properties.Resources.pngwing_com;
-            this.pictureBox1.Location = new System.Drawing.Point(137, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.AlignJustify;
-            this.btnMenu.IconColor = System.Drawing.Color.White;
-            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMenu.IconSize = 30;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(94, 60);
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            // 
             // Uc_sidebarSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Uc_sidebarSinhVien";
-            this.Size = new System.Drawing.Size(100, 551);
+            this.Size = new System.Drawing.Size(133, 678);
             this.panelLogo.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
