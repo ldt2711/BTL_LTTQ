@@ -242,6 +242,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentDBDataSet_BangDIem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDBDataSet_BangDIem.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\Admin\FrmQLSV.resx">
       <DependentUpon>FrmQLSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +368,17 @@
     </None>
     <None Include="StudentDBDataSet2.xss">
       <DependentUpon>StudentDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet_BangDIem.xsc">
+      <DependentUpon>StudentDBDataSet_BangDIem.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDBDataSet_BangDIem.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDBDataSet_BangDIem.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDBDataSet_BangDIem.xss">
+      <DependentUpon>StudentDBDataSet_BangDIem.xsd</DependentUpon>
     </None>
     <None Include="Utils\Images\bookicon.png" />
     <None Include="Utils\Images\pngwing.com.png" />
