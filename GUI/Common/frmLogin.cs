@@ -1,4 +1,6 @@
-﻿using BTL_LTTQ.GUI.Admin;
+﻿using BTL_LTTQ.BUS;
+using BTL_LTTQ.GUI.Admin;
+using BTL_LTTQ.GUI.SinhVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,7 @@ namespace BTL_LTTQ.Common
 {
     public partial class frmLogin : Form
     {
+        private TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
         private bool isLoggedIn = false;
         public frmLogin()
         {
@@ -50,13 +53,36 @@ namespace BTL_LTTQ.Common
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            isLoggedIn = true;
-            if (isLoggedIn)
+            string user = tBTenTaiKhoan.Text.Trim();
+            string pass = tBMatKhau.Text.Trim();
+
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                FrmQLSV frmQlsv = new FrmQLSV(this);
-                frmQlsv.Show();
-                this.Hide();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            var result = taiKhoanBUS.Login(user, pass);
+
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Mở form tương ứng
+            if (result.Role == 0) // Admin
+            {
+                FrmQLSV adminForm = new FrmQLSV(this);
+                adminForm.Show();
+            }
+            else if (result.Role == 1) // Sinh viên
+            {
+                frmSinhVien svForm = new frmSinhVien(this);
+                svForm.Show();
+            }
+
+            this.Hide(); // ẩn form đăng nhập
         }
     }
 }
