@@ -1,9 +1,13 @@
 ﻿using BTL_LTTQ.Common;
+using BTL_LTTQ.GUI.Admin;
+using BTL_LTTQ.GUI.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp.Helpers;
+using BTL_LTTQ.GUI.Admin;
 
 namespace BTL_LTTQ
 {
@@ -17,6 +21,9 @@ namespace BTL_LTTQ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DatabaseConnection.InitializeDatabase();
+
             Application.Run(new frmLogin());
         }
     }

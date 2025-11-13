@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BTL_LTTQ.GUI.SinhVien
+{
+    public partial class Uc_TrangChuSinhVien : UserControl
+    {
+        public Uc_TrangChuSinhVien()
+        {
+            InitializeComponent();
+        }
+    }
+}

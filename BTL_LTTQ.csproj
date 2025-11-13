@@ -48,10 +48,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,34 +68,196 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\frmLogin.cs">
+    <Compile Include="BUS\LopHocBUS.cs" />
+    <Compile Include="BUS\TaiKhoanBUS.cs" />
+    <Compile Include="DAL\LopHocDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
+    <Compile Include="Database\AppSetting.cs" />
+    <Compile Include="Database\BaoCaoDiem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\FrmQLSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\frmLogin.Designer.cs">
+    <Compile Include="GUI\Admin\FrmQLSV.Designer.cs">
+      <DependentUpon>FrmQLSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DatabaseConnection.cs" />
+    <Compile Include="Database\DbDataGen.cs" />
+    <Compile Include="Database\DbInit.cs" />
+    <Compile Include="GUI\Admin\Uc_HocPhanAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_HocPhanAdmin.Designer.cs">
+      <DependentUpon>Uc_HocPhanAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_KhoaAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_KhoaAdmin.Designer.cs">
+      <DependentUpon>Uc_KhoaAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_NhapDiemAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_NhapDiemAdmin.Designer.cs">
+      <DependentUpon>Uc_NhapDiemAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_SinhVienAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_SinhVienAdmin.Designer.cs">
+      <DependentUpon>Uc_SinhVienAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKAdmin.Designer.cs">
+      <DependentUpon>Uc_TKAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKBCAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TKBCAdmin.Designer.cs">
+      <DependentUpon>Uc_TKBCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TrangChuAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_TrangChuAdmin.Designer.cs">
+      <DependentUpon>Uc_TrangChuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Common\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Common\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="GUI\Common\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\Common\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_sidebarAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Uc_sidebarAdmin.Designer.cs">
+      <DependentUpon>Uc_sidebarAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_HocPhanSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_HocPhanSinhVien.Designer.cs">
+      <DependentUpon>Uc_HocPhanSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_sidebarSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_sidebarSinhVien.Designer.cs">
+      <DependentUpon>Uc_sidebarSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TTCNSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TTCNSinhVien.Designer.cs">
+      <DependentUpon>Uc_TTCNSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TrangChuSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_TrangChuSinhVien.Designer.cs">
+      <DependentUpon>Uc_TrangChuSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_XemDiemSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SinhVien\Uc_XemDiemSinhVien.Designer.cs">
+      <DependentUpon>Uc_XemDiemSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Common\frmLogin.resx">
+    <EmbeddedResource Include="GUI\Admin\FrmQLSV.resx">
+      <DependentUpon>FrmQLSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_HocPhanAdmin.resx">
+      <DependentUpon>Uc_HocPhanAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_KhoaAdmin.resx">
+      <DependentUpon>Uc_KhoaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_NhapDiemAdmin.resx">
+      <DependentUpon>Uc_NhapDiemAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_SinhVienAdmin.resx">
+      <DependentUpon>Uc_SinhVienAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_TKAdmin.resx">
+      <DependentUpon>Uc_TKAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_TKBCAdmin.resx">
+      <DependentUpon>Uc_TKBCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_TrangChuAdmin.resx">
+      <DependentUpon>Uc_TrangChuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Common\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Common\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Uc_sidebarAdmin.resx">
+      <DependentUpon>Uc_sidebarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\Uc_sidebarSinhVien.resx">
+      <DependentUpon>Uc_sidebarSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\Uc_TrangChuSinhVien.resx">
+      <DependentUpon>Uc_TrangChuSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SinhVien\Uc_XemDiemSinhVien.resx">
+      <DependentUpon>Uc_XemDiemSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Database\BaoCaoDiem.xsc">
+      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
+    </None>
+    <None Include="Database\BaoCaoDiem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaoCaoDiem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Database\BaoCaoDiem.xss">
+      <DependentUpon>BaoCaoDiem.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,22 +285,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\bookicon.png" />
-    <None Include="Images\pngwing.com.png" />
-    <Content Include="LTTQ_QLSV.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="LTTQ_QLSV_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>LTTQ_QLSV.mdf</DependentUpon>
-    </Content>
+    <None Include="Utils\Images\bookicon.png" />
+    <None Include="Utils\Images\pngwing.com.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="QLyDiemSinhVien\BUS\" />
-    <Folder Include="QLyDiemSinhVien\DAL\" />
-    <Folder Include="QLyDiemSinhVien\DataBase\" />
-    <Folder Include="SinhVien\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
