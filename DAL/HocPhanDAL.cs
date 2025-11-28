@@ -222,5 +222,112 @@ namespace BTL_LTTQ.DAL
                 return dt;
             }
         }
+        public static (string tenSV, string lop, string maKhoa) GetThongTinCoBanSV(string maSV)
+        {
+            string tenSV = "";
+            string lop = "";
+            string maKhoa = "";
+
+            if (string.IsNullOrEmpty(maSV)) return (tenSV, lop, maKhoa);
+
+            string query = "SELECT HoTen, Lop FROM SINHVIEN WHERE MaSV = @MaSV";
+
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+                try
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tenSV = reader["HoTen"].ToString();
+                            lop = reader["Lop"].ToString();
+                            maKhoa = reader["MaKhoa"].ToString();
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    // Có thể log lỗi nếu cần
+                }
+            }
+            return (tenSV, lop, maKhoa);
+        }
+
+        // -------------------------------------------------------------------
+        // ⭐ HÀM BỔ SUNG CHO SINH VIÊN (LẤY DANH SÁCH HỌC PHẦN LIÊN QUAN)
+        // Lấy tất cả học phần, nhưng chỉ những học phần thuộc MaKhoa của sinh viên
+        // -------------------------------------------------------------------
+        public static DataTable GetHocPhanByMaSV(string maSV)
+        {
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            {
+                // JOIN BANGDIEM để lọc ra các MaHP duy nhất mà MaSV đã học
+                string query = @"
+                SELECT DISTINCT
+                    HP.MaHP, 
+                    HP.TenHP, 
+                    HP.SoTin, 
+                    HP.TrongSoQT, 
+                    HP.TrongSoKTHP, 
+                    HP.HocKy, 
+                    HP.NamHoc 
+                FROM BANGDIEM BD
+                JOIN HOCPHAN HP ON BD.MaHP = HP.MaHP
+                WHERE BD.MaSV = @MaSV
+                ORDER BY HP.NamHoc DESC, HP.HocKy DESC";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        // -------------------------------------------------------------------
+        // ⭐ HÀM BỔ SUNG CHO SINH VIÊN (TÌM KIẾM THEO TÊN/MÃ TRONG DANH SÁCH HP LIÊN QUAN)
+        // -------------------------------------------------------------------
+        public static DataTable TimKiemHocPhanByMaSV(string maSV, string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                // Nếu không có từ khóa, gọi hàm lấy tất cả học phần đã học
+                return GetHocPhanByMaSV(maSV);
+            }
+
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            {
+                // Lọc bằng cách JOIN BANGDIEM VÀ dùng LIKE trên MaHP/TenHP
+                string query = @"
+                SELECT DISTINCT
+                    HP.MaHP, 
+                    HP.TenHP, 
+                    HP.SoTin, 
+                    HP.TrongSoQT, 
+                    HP.TrongSoKTHP, 
+                    HP.HocKy, 
+                    HP.NamHoc 
+                FROM BANGDIEM BD
+                JOIN HOCPHAN HP ON BD.MaHP = HP.MaHP
+                WHERE BD.MaSV = @MaSV 
+                  AND (HP.MaHP LIKE @Keyword OR HP.TenHP LIKE @Keyword)
+                ORDER BY HP.NamHoc DESC, HP.HocKy DESC";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+                cmd.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
     }
 }

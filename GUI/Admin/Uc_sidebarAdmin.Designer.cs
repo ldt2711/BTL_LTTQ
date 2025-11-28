@@ -76,7 +76,6 @@
             this.btnDangXuat.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             this.btnDangXuat.IconColor = System.Drawing.Color.White;
             this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDangXuat.IconSize = 30;
             this.btnDangXuat.Location = new System.Drawing.Point(0, 540);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangXuat.Name = "btnDangXuat";
@@ -101,7 +100,6 @@
             this.btnKhoa.IconChar = FontAwesome.Sharp.IconChar.Building;
             this.btnKhoa.IconColor = System.Drawing.Color.White;
             this.btnKhoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnKhoa.IconSize = 30;
             this.btnKhoa.Location = new System.Drawing.Point(0, 470);
             this.btnKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnKhoa.Name = "btnKhoa";
