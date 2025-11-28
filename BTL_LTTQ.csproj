@@ -125,6 +125,7 @@
     <Compile Include="DAL\DiemDAL.cs" />
     <Compile Include="DAL\HocPhanDAL.cs" />
     <Compile Include="DAL\KhoaDAL.cs" />
+    <Compile Include="DAL\SinhVienInfoDAL.cs" />
     <Compile Include="DAL\SinhVien_CB_DAL.cs" />
     <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DAL\ThongKeDAL.cs" />

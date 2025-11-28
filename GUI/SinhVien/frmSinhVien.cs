@@ -17,7 +17,7 @@ namespace BTL_LTTQ.GUI.SinhVien
         // Các UserControl
         private Uc_TrangChuSinhVien uc_trangChuSinhVien;
         private Uc_HocPhanSinhVien uc_hocPhanSinhVien;
-        private Uc_XemDiemSinhVien uc_xemDiemSinhVien;
+        private Uc_BangDiemSV uc_xemDiemSinhVien;
         private Uc_TTCNSinhVien uc_ttcnSinhVien;
 
         private void KhoiTaoUserControls()
@@ -27,7 +27,7 @@ namespace BTL_LTTQ.GUI.SinhVien
             // Khởi tạo các UC
             uc_hocPhanSinhVien = new Uc_HocPhanSinhVien();
             uc_trangChuSinhVien = new Uc_TrangChuSinhVien();
-            uc_xemDiemSinhVien = new Uc_XemDiemSinhVien();
+            uc_xemDiemSinhVien = new Uc_BangDiemSV();
             uc_ttcnSinhVien = new Uc_TTCNSinhVien();
 
             // Dock fill

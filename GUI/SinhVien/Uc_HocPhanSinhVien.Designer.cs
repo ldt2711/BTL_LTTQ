@@ -59,7 +59,7 @@
             this.lBIntro.Name = "lBIntro";
             this.lBIntro.Size = new System.Drawing.Size(786, 60);
             this.lBIntro.TabIndex = 0;
-            this.lBIntro.Text = "Danh sách học phần sinh viên";
+            this.lBIntro.Text = "DANH SÁCH HỌC PHẦN";
             this.lBIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1

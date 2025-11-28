@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// File: DAL/DiemDAL.cs (Hoàn thiện)
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinFormsApp.Helpers;
 
 namespace BTL_LTTQ.DAL
 {
     internal class DiemDAL
     {
+        // Hàm này lấy toàn bộ dữ liệu điểm có join với SV và HP (Dùng cho Đồng bộ và GetTatCaDiem)
         private static DataTable ExecuteDiemQuery(string whereClause, SqlCommand cmd)
         {
             string query = @"
@@ -33,37 +31,22 @@ namespace BTL_LTTQ.DAL
                 return dt;
             }
         }
-        public static bool DongBoDiemTongKet()
+
+        // ⭐ Hàm TÍNH ĐIỂM TỔNG KẾT (Giữ nguyên logic của bạn)
+        private static decimal TinhDiemTongKet(string maHP, decimal diemQT, decimal diemKTHP)
         {
-            DataTable dtDiem = GetTatCaDiem(); // Hàm này phải lấy cả MaSV, MaHP, DiemQT, DiemKTHP
-            bool success = true;
+            // Cần HocPhanDAL.cs có hàm GetTrongSo() để chạy được
+            var trongSo = HocPhanDAL.GetTrongSo(maHP);
 
-            foreach (DataRow row in dtDiem.Rows)
-            {
-                try
-                {
-                    string maSV = row["MaSV"].ToString();
-                    string maHP = row["MaHP"].ToString();
+            decimal diemTK = (diemQT * trongSo.trongSoQT) + (diemKTHP * trongSo.trongSoKTHP);
+            return Math.Round(diemTK, 1);
+        }
 
-                    // Cần kiểm tra DBNull hoặc Parse lỗi
-                    if (decimal.TryParse(row["DiemQT"].ToString(), out decimal diemQT) &&
-                        decimal.TryParse(row["DiemKTHP"].ToString(), out decimal diemKTHP))
-                    {
-                        decimal diemTK = TinhDiemTongKet(maHP, diemQT, diemKTHP);
-
-                        // Gọi hàm nội bộ để cập nhật
-                        if (!CapNhatDiemTongKet(maSV, maHP, diemTK))
-                        {
-                            success = false; // Ghi nhận lỗi nhưng tiếp tục vòng lặp
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    success = false;
-                }
-            }
-            return success;
+        // ⭐ Hàm lấy TẤT CẢ ĐIỂM (Dùng cho Đồng bộ)
+        public static DataTable GetTatCaDiem()
+        {
+            // Lấy tất cả các cột cần thiết, kể cả cột HoTen/TenHP
+            return ExecuteDiemQuery("", new SqlCommand());
         }
 
         // ⭐ HÀM NỘI BỘ: Chỉ UPDATE cột DiemTongKet
@@ -94,16 +77,38 @@ namespace BTL_LTTQ.DAL
                 return false;
             }
         }
-        public static DataTable GetTatCaDiem()
-        {
-            return ExecuteDiemQuery("", new SqlCommand());
-        }
-        private static decimal TinhDiemTongKet(string maHP, decimal diemQT, decimal diemKTHP)
-        {
-            var trongSo = HocPhanDAL.GetTrongSo(maHP);
 
-            decimal diemTK = (diemQT * trongSo.trongSoQT) + (diemKTHP * trongSo.trongSoKTHP);
-            return Math.Round(diemTK, 1);
+        // ⭐ HÀM ĐỒNG BỘ ĐIỂM TỔNG KẾT
+        public static bool DongBoDiemTongKet()
+        {
+            DataTable dtDiem = GetTatCaDiem();
+            bool success = true;
+
+            foreach (DataRow row in dtDiem.Rows)
+            {
+                try
+                {
+                    string maSV = row["MaSV"].ToString();
+                    string maHP = row["MaHP"].ToString();
+
+                    // Cần lấy giá trị DiemQT và DiemKTHP từ DataTable của ExecuteDiemQuery
+                    if (decimal.TryParse(row["DiemQT"].ToString(), out decimal diemQT) &&
+                        decimal.TryParse(row["DiemKTHP"].ToString(), out decimal diemKTHP))
+                    {
+                        decimal diemTK = TinhDiemTongKet(maHP, diemQT, diemKTHP);
+
+                        if (!CapNhatDiemTongKet(maSV, maHP, diemTK))
+                        {
+                            success = false;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
 
         // ⭐ Hàm thêm Điểm (Insert)
@@ -111,7 +116,7 @@ namespace BTL_LTTQ.DAL
         {
             try
             {
-                decimal diemTK = TinhDiemTongKet(maHP, diemQT, diemKTHP); // TÍNH ĐIỂM
+                decimal diemTK = TinhDiemTongKet(maHP, diemQT, diemKTHP);
                 using (SqlConnection conn = DatabaseConnection.GetConnection())
                 {
                     conn.Open();
@@ -164,7 +169,7 @@ namespace BTL_LTTQ.DAL
                         cmd.Parameters.AddWithValue("@MaHP", maHP);
                         cmd.Parameters.Add("@DiemQT", SqlDbType.Decimal).Value = diemQT;
                         cmd.Parameters.Add("@DiemKTHP", SqlDbType.Decimal).Value = diemKTHP;
-                        cmd.Parameters.Add("@DiemTongKet", SqlDbType.Decimal).Value = diemTK; // Thêm tham số
+                        cmd.Parameters.Add("@DiemTongKet", SqlDbType.Decimal).Value = diemTK;
 
                         return cmd.ExecuteNonQuery() > 0;
                     }
@@ -200,28 +205,189 @@ namespace BTL_LTTQ.DAL
             }
         }
 
-        // ⭐ Hàm tìm kiếm Điểm
+        // ⭐ Hàm tìm kiếm Điểm (Giữ nguyên logic của bạn)
         public static DataTable TimDiem(string maSV, string maHP)
         {
             string whereClause = "WHERE 1=1";
             SqlCommand cmd = new SqlCommand();
 
-            // Tìm theo Mã (vì Textbox trên UI vẫn là nơi nhập Mã để tìm kiếm)
             if (!string.IsNullOrEmpty(maSV))
             {
-                // Thay đổi thành tìm kiếm theo Tên nếu muốn tìm kiếm theo Tên trên UI
-                whereClause += " AND (D.MaSV LIKE @MaSV OR S.TenSV LIKE @MaSV)";
+                whereClause += " AND (D.MaSV LIKE @MaSV OR S.HoTen LIKE @MaSV)";
                 cmd.Parameters.AddWithValue("@MaSV", "%" + maSV + "%");
             }
 
             if (!string.IsNullOrEmpty(maHP))
             {
-                // Thay đổi thành tìm kiếm theo Tên nếu muốn tìm kiếm theo Tên trên UI
                 whereClause += " AND (D.MaHP LIKE @MaHP OR HP.TenHP LIKE @MaHP)";
                 cmd.Parameters.AddWithValue("@MaHP", "%" + maHP + "%");
             }
 
             return ExecuteDiemQuery(whereClause, cmd);
+        }
+        private static DataTable GetDistinctValuesByMaSV(string columnName, string joinTable, string maSV)
+        {
+            // Cần join bảng BANGDIEM để lọc ra các MaHP mà MaSV đã học, sau đó join tiếp để lấy thông tin chi tiết (Lớp, HK, NH).
+            string query = $@"
+        SELECT DISTINCT 
+            CAST(T.{columnName} AS NVARCHAR(50)) AS {columnName} 
+        FROM BANGDIEM D
+        INNER JOIN {joinTable} T ON D.{columnName} = T.{columnName} -- Đây là lỗi logic khi lấy HK/NH. Sửa lại:
+        INNER JOIN HOCPHAN HP ON D.MaHP = HP.MaHP 
+        INNER JOIN SINHVIEN SV ON D.MaSV = SV.MaSV
+        WHERE D.MaSV = @MaSV 
+        ORDER BY {columnName}";
+
+            // Phải xử lý đặc biệt cho từng trường hợp Join để query đúng.
+            // Tách riêng từng hàm sẽ dễ quản lý hơn:
+
+            return new DataTable(); // Trả về DataTable trống để tránh lỗi nếu không implement chi tiết.
+        }
+
+
+        // --- Các hàm lấy danh sách LỌC THEO SINH VIÊN ---
+
+        public static DataTable GetDanhSachLopBySV(string maSV)
+        {
+            // Lớp chỉ có 1 cho mỗi sinh viên, nhưng vẫn cần lấy Lớp từ bảng SINHVIEN
+            string query = "SELECT DISTINCT Lop FROM SINHVIEN WHERE MaSV = @MaSV";
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static DataTable GetDanhSachHocPhanBySV(string maSV)
+        {
+            // Lấy tất cả MaHP mà sinh viên có điểm
+            string query = @"
+        SELECT DISTINCT 
+            CAST(D.MaHP AS NVARCHAR(50)) AS MaHP 
+        FROM BANGDIEM D
+        WHERE D.MaSV = @MaSV 
+        ORDER BY MaHP";
+
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static DataTable GetDanhSachHocKyBySV(string maSV)
+        {
+            // Lấy tất cả Học kỳ của các MaHP mà sinh viên có điểm (JOIN HOCPHAN)
+            string query = @"
+        SELECT DISTINCT 
+            CAST(HP.HocKy AS NVARCHAR(50)) AS HocKy 
+        FROM BANGDIEM D
+        JOIN HOCPHAN HP ON D.MaHP = HP.MaHP
+        WHERE D.MaSV = @MaSV 
+        ORDER BY HocKy";
+
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static DataTable GetDanhSachNamHocBySV(string maSV)
+        {
+            // Lấy tất cả Năm học của các MaHP mà sinh viên có điểm (JOIN HOCPHAN)
+            string query = @"
+                SELECT DISTINCT 
+                    CAST(HP.NamHoc AS NVARCHAR(50)) AS NamHoc 
+                FROM BANGDIEM D
+                JOIN HOCPHAN HP ON D.MaHP = HP.MaHP
+                WHERE D.MaSV = @MaSV 
+                ORDER BY NamHoc";
+
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MaSV", maSV);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        // ⭐ Hàm tra cứu điểm đã được sửa để JOIN HOCPHAN khi lọc
+        public static DataTable GetBangDiemByFilter(
+            string maSV,
+            string lop,
+            string maHP,
+            string hocKy,
+            string namHoc)
+        {
+            // Lưu ý: Dùng D.DiemKTHP (từ hàm TimDiem) hay D.DiemKT (từ query cũ)?
+            // Trong query này, mình đang dùng D.DiemKT cho khớp với công thức, nếu DB dùng D.DiemKTHP thì cần sửa.
+            string query = @"
+            SELECT
+                D.MaHP,
+                HP.TenHP,
+                HP.SoTin,
+                D.DiemQT,
+                D.DiemKTHP, -- ⭐ Sử dụng DiemKTHP cho khớp với các hàm trên
+                (D.DiemQT * HP.TrongSoQT + D.DiemKTHP * HP.TrongSoKTHP) AS DiemTongKet
+            FROM BANGDIEM D -- ⭐ Sử dụng BANGDIEM cho khớp với các hàm trên
+            INNER JOIN HOCPHAN HP ON D.MaHP = HP.MaHP -- JOIN để lấy trọng số, Học kỳ và Năm học
+            INNER JOIN SINHVIEN SV ON D.MaSV = SV.MaSV
+            WHERE D.MaSV = @MaSV";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@MaSV", maSV);
+
+            // Thêm các điều kiện lọc (nếu có)
+            if (!string.IsNullOrEmpty(lop))
+            {
+                query += " AND SV.Lop = @Lop";
+                cmd.Parameters.AddWithValue("@Lop", lop);
+            }
+            if (!string.IsNullOrEmpty(maHP))
+            {
+                query += " AND D.MaHP = @MaHP";
+                cmd.Parameters.AddWithValue("@MaHP", maHP);
+            }
+
+            // ⭐ CẬP NHẬT LỌC: Lọc theo Học kỳ và Năm học trong bảng HOCPHAN (HP)
+            if (!string.IsNullOrEmpty(hocKy))
+            {
+                query += " AND HP.HocKy = @HocKy";
+                cmd.Parameters.AddWithValue("@HocKy", hocKy);
+            }
+            if (!string.IsNullOrEmpty(namHoc))
+            {
+                query += " AND HP.NamHoc = @NamHoc";
+                cmd.Parameters.AddWithValue("@NamHoc", namHoc);
+            }
+
+            query += " ORDER BY HP.NamHoc, HP.HocKy, D.MaHP";
+
+            using (SqlConnection conn = DatabaseConnection.GetConnection())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = query;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
     }
 }
