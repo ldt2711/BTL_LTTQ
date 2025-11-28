@@ -11,33 +11,34 @@ namespace BTL_LTTQ.DAL
 {
     internal class SinhVien_CB_DAL
     {
-        public static bool ThemSinhVien(
-                string maSV, string hoTen, DateTime ngaySinh, string gioiTinh,
-                string noiSinh, string lop, string maKhoa, string maTK)
+        public DataRow GetThongTinSinhVienByMaTK(string maTK)
         {
+            // Truy vấn lấy thông tin sinh viên và thông tin học vấn từ các bảng liên quan
+            // Giả định bảng SINHVIEN có cột MaTK liên kết với TTTAIKHOAN
+            string query = @"
+            SELECT 
+                SV.MaSV, SV.HoTen, SV.NgaySinh, SV.NoiSinh, SV.GioiTinh, 
+                SV.Lop, 
+                SV.MaKhoa, 
+                K.TenKhoa,
+                TK.MaTK, TK.TaiKhoan 
+            FROM SINHVIEN SV
+            INNER JOIN TTTAIKHOAN TK ON SV.MaTK = TK.MaTK
+            INNER JOIN KHOA K ON SV.MaKhoa = K.MaKhoa -- ⭐ JOIN với bảng KHOA
+            WHERE SV.MaTK = @MaTK"; // Lọc bằng MaTK của tài khoản đã đăng nhập
+
             using (SqlConnection conn = DatabaseConnection.GetConnection())
             {
-                string query = @"
-            INSERT INTO SINHVIEN
-            (MaSV, HoTen, NgaySinh, GioiTinh, NoiSinh, Lop, MaKhoa, MaTK)
-            VALUES
-            (@MaSV, @HoTen, @NgaySinh, @GioiTinh, @NoiSinh, @Lop, @MaKhoa, @MaTK)";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.SelectCommand.Parameters.AddWithValue("@MaTK", maTK);
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@MaSV", maSV);
-                    cmd.Parameters.AddWithValue("@HoTen", hoTen);
-                    cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
-                    cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);
-                    cmd.Parameters.AddWithValue("@NoiSinh", noiSinh);
-                    cmd.Parameters.AddWithValue("@Lop", lop);
-                    cmd.Parameters.AddWithValue("@MaKhoa", maKhoa);
-                    cmd.Parameters.AddWithValue("@MaTK", maTK);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                    conn.Open();
-                    int kq = cmd.ExecuteNonQuery();
-                    return kq > 0;
-                }
+                if (dt.Rows.Count == 0)
+                    return null;
+
+                return dt.Rows[0];
             }
         }
         public static bool ThemSinhVienVaTaiKhoan(string maSV, string hoTen, DateTime ngaySinh, string gioiTinh,
@@ -178,29 +179,47 @@ namespace BTL_LTTQ.DAL
             }
 
         }
-        public static DataTable TimSinhVien(string tuKhoa)
+        public static DataTable TimSinhVien(Dictionary<string, string> filters)
         {
             using (SqlConnection conn = DatabaseConnection.GetConnection())
             {
+                string query = "SELECT * FROM SINHVIEN WHERE 1=1";
 
-                string query = @"SELECT * FROM SINHVIEN 
-                                 WHERE MaSV LIKE @TuKhoa OR HoTen LIKE @TuKhoa";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                int i = 0;
+                foreach (var item in filters)
                 {
-                    cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
+                    if (string.IsNullOrWhiteSpace(item.Value)) continue;
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    return dt;
+                    string field = item.Key;
+                    string value = item.Value;
+                    string param = "@param" + i;
+
+                    // Nếu cột là DateTime -> so sánh theo ngày
+                    if (field == "NgaySinh")
+                    {
+                        query += $" AND CONVERT(date, NgaySinh) = CONVERT(date, {param})";
+                        cmd.Parameters.AddWithValue(param, DateTime.Parse(value));
+                    }
+                    else
+                    {
+                        // Các cột kiểu chuỗi -> dùng LIKE
+                        query += $" AND {field} LIKE {param}";
+                        cmd.Parameters.AddWithValue(param, "%" + value + "%");
+                    }
+
+                    i++;
                 }
+
+                cmd.CommandText = query;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
             }
-
-
-
-
-            
         }
     }
 }

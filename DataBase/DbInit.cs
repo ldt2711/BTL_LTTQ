@@ -27,8 +27,8 @@ namespace WinFormsApp.Helpers
                     MaHP NVARCHAR(20) NOT NULL PRIMARY KEY,
                     TenHP NVARCHAR(100),
                     SoTin INT,
-                    TrongSoQT FLOAT,
-                    TrongSoKTHP FLOAT,
+                    TrongSoQT NUMERIC(2,1),
+                    TrongSoKTHP NUMERIC(2,1),
                     HocKy INT,
                     NamHoc INT
                 );
@@ -49,8 +49,9 @@ namespace WinFormsApp.Helpers
                 CREATE TABLE BANGDIEM (
                     MaSV CHAR(10),
                     MaHP NVARCHAR(20),
-                    DiemQT FLOAT,
-                    DiemKTHP FLOAT,
+                    DiemQT NUMERIC(3,1),
+                    DiemKTHP NUMERIC(3,1),
+                    DiemTongKet NUMERIC(3,1),
                     FOREIGN KEY (MaSV) REFERENCES SINHVIEN(MaSV),
                     FOREIGN KEY (MaHP) REFERENCES HOCPHAN(MaHP)
                 );";

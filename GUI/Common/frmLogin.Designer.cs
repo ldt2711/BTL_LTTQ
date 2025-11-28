@@ -54,7 +54,6 @@
             this.lbLogin.Size = new System.Drawing.Size(181, 37);
             this.lbLogin.TabIndex = 0;
             this.lbLogin.Text = "ĐĂNG NHẬP";
-            this.lbLogin.Click += new System.EventHandler(this.lbLogin_Click);
             // 
             // lbTenTaiKhoan
             // 
@@ -66,7 +65,6 @@
             this.lbTenTaiKhoan.Size = new System.Drawing.Size(126, 25);
             this.lbTenTaiKhoan.TabIndex = 1;
             this.lbTenTaiKhoan.Text = "Tên tài khoản";
-            this.lbTenTaiKhoan.Click += new System.EventHandler(this.lbTenTaiKhoan_Click);
             // 
             // lbMatKhau
             // 
@@ -78,7 +76,6 @@
             this.lbMatKhau.Size = new System.Drawing.Size(94, 25);
             this.lbMatKhau.TabIndex = 2;
             this.lbMatKhau.Text = "Mật khẩu";
-            this.lbMatKhau.Click += new System.EventHandler(this.lbMatKhau_Click);
             // 
             // tBTenTaiKhoan
             // 
@@ -88,7 +85,6 @@
             this.tBTenTaiKhoan.Name = "tBTenTaiKhoan";
             this.tBTenTaiKhoan.Size = new System.Drawing.Size(246, 19);
             this.tBTenTaiKhoan.TabIndex = 3;
-            this.tBTenTaiKhoan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tBMatKhau
             // 
@@ -114,7 +110,6 @@
             this.gBDangNhap.Size = new System.Drawing.Size(267, 502);
             this.gBDangNhap.TabIndex = 5;
             this.gBDangNhap.TabStop = false;
-            this.gBDangNhap.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btLogin
             // 
@@ -153,7 +148,6 @@
             this.pnLayout.Name = "pnLayout";
             this.pnLayout.Size = new System.Drawing.Size(544, 502);
             this.pnLayout.TabIndex = 6;
-            this.pnLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLayout_Paint);
             // 
             // lbWelcome
             // 
@@ -164,7 +158,6 @@
             this.lbWelcome.Size = new System.Drawing.Size(451, 72);
             this.lbWelcome.TabIndex = 1;
             this.lbWelcome.Text = "Quản lý sinh viên";
-            this.lbWelcome.Click += new System.EventHandler(this.lbWelcome_Click);
             // 
             // pBGraduate
             // 

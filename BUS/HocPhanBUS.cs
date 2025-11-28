@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BTL_LTTQ.BUS
 {
-    internal class LopHocBUS
+    internal class HocPhanBUS
     {
     }
 }

@@ -26,6 +26,7 @@ namespace BTL_LTTQ.GUI.Admin
             cmbKhoa.DisplayMember = "TenKhoa";  // Tên hiển thị
             cmbKhoa.ValueMember = "MaKhoa";     // Giá trị thực sự
             cmbKhoa.SelectedIndex = -1;         // ban đầu chưa chọn
+            SetStateDefault();
         }
 
     
@@ -36,9 +37,6 @@ namespace BTL_LTTQ.GUI.Admin
             {
                 dgSinhVien.DataSource = ThongKeDAL.GetTatCaSinhVien();
 
-                // Tùy chỉnh hiển thị
-                dgSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgSinhVien.BackgroundColor = Color.White;
 
                 dgSinhVien.Columns["MaSV"].HeaderText = "Mã SV";
                 dgSinhVien.Columns["HoTen"].HeaderText = "Họ Tên";
@@ -49,7 +47,9 @@ namespace BTL_LTTQ.GUI.Admin
                 dgSinhVien.Columns["MaKhoa"].HeaderText = "Mã Khoa";
                 dgSinhVien.Columns["MaTK"].HeaderText = "Mã TK";
 
-               
+                // Tùy chỉnh hiển thị
+                dgSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgSinhVien.BackgroundColor = Color.White;
             }
             catch (Exception ex)
             {
@@ -69,7 +69,10 @@ namespace BTL_LTTQ.GUI.Admin
                     txtNoiSinh.Text = row.Cells["NoiSinh"]?.Value?.ToString() ?? "";
                     txtLop.Text = row.Cells["Lop"]?.Value?.ToString() ?? "";
                     
-                    txtGioiTinh.Text = row.Cells["GioiTinh"]?.Value?.ToString() ?? "";
+                    if ((row.Cells["GioiTinh"]?.Value?.ToString() ?? "") == "Nam") {
+                        radioCheckNam(true);
+                    }
+                    else radioCheckNam(false);
 
                     // DateTimePicker
                     if (DateTime.TryParse(row.Cells["NgaySinh"]?.Value?.ToString(), out DateTime ngaySinh))
@@ -83,12 +86,18 @@ namespace BTL_LTTQ.GUI.Admin
                     {
                         cmbKhoa.SelectedValue = maKhoa;
                     }
+                    SetStateSelected();
                 }
             }
             catch (Exception ex)
             {
                 
             }
+        }
+        private void radioCheckNam(bool check)
+        {
+            rdbNam.Checked = check;
+            rdbNu.Checked= !check;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -106,8 +115,12 @@ namespace BTL_LTTQ.GUI.Admin
             // Reset ComboBox
             cmbKhoa.SelectedIndex = -1;
 
+            rdbNam.Checked = false;
+            rdbNu.Checked = false;
+
             // Nếu muốn reset DataGridView về tất cả sinh viên
             dgSinhVien.DataSource = ThongKeDAL.GetTatCaSinhVien();
+            SetStateDefault();
         }
 
 
@@ -122,7 +135,7 @@ namespace BTL_LTTQ.GUI.Admin
             string lop = txtLop.Text.Trim();
            
             string maKhoa = cmbKhoa.SelectedValue?.ToString();
-            string gioiTinh = txtGioiTinh.Text.Trim(); // hoặc lấy từ RadioButton / ComboBox nếu có
+            string gioiTinh = rdbNam.Checked ? "Nam" : "Nữ";
             DateTime ngaySinh = dtpNgaySinh.Value;
 
             // Kiểm tra dữ liệu cơ bản
@@ -209,7 +222,7 @@ namespace BTL_LTTQ.GUI.Admin
                     txtHoTen.Text.Trim(),
                     txtNoiSinh.Text.Trim(),
                     txtLop.Text.Trim(),
-                    txtGioiTinh.Text.Trim(),
+                    rdbNam.Checked ? "Nam" : "Nữ",
                     dtpNgaySinh.Value,
                     cmbKhoa.SelectedValue?.ToString()
                 );
@@ -236,25 +249,48 @@ namespace BTL_LTTQ.GUI.Admin
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string tuKhoa = txtTim.Text.Trim(); // txtTim là TextBox nhập từ khóa
+            var filters = new Dictionary<string, string>();
 
-            if (string.IsNullOrEmpty(tuKhoa))
+            if (!string.IsNullOrEmpty(txtMaSV.Text.Trim()))
+                filters["MaSV"] = txtMaSV.Text.Trim();
+
+            if (!string.IsNullOrEmpty(txtHoTen.Text.Trim()))
+                filters["HoTen"] = txtHoTen.Text.Trim();
+
+            if (!string.IsNullOrEmpty(txtLop.Text.Trim()))
+                filters["Lop"] = txtLop.Text.Trim();
+
+            if (!string.IsNullOrEmpty(txtNoiSinh.Text.Trim()))
+                filters["NoiSinh"] = txtNoiSinh.Text.Trim();
+
+            if (cmbKhoa.SelectedValue != null)
+                filters["MaKhoa"] = cmbKhoa.SelectedValue.ToString();
+
+            if (rdbNam.Checked)
+                filters["GioiTinh"] = "Nam";
+            else if (rdbNu.Checked)
+                filters["GioiTinh"] = "Nữ";
+
+            if (dtpNgaySinh.Value.Date != DateTime.Now.Date) // Nếu giá trị khác ngày hôm nay, coi như người dùng muốn tìm
             {
-                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                filters["NgaySinh"] = dtpNgaySinh.Value.ToString("MM-dd-yyyy");
+            }
+
+            // Nếu không có bất kỳ bộ lọc nào được thiết lập, bạn có thể load lại tất cả sinh viên hoặc cảnh báo.
+            if (filters.Count == 0)
+            {
+                LayTatCaSinhVien_Load(null, null);
                 return;
             }
 
+
             try
             {
-                DataTable dt = SinhVien_CB_DAL.TimSinhVien(tuKhoa);
-                if (dt.Rows.Count > 0)
+                DataTable dt = SinhVien_CB_DAL.TimSinhVien(filters);
+                dgSinhVien.DataSource = dt;
+                if (dt.Rows.Count == 0)
                 {
-                    dgSinhVien.DataSource = dt;
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy sinh viên phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgSinhVien.DataSource = null;
+                    MessageBox.Show("Không tìm thấy sinh viên nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -325,67 +361,59 @@ namespace BTL_LTTQ.GUI.Admin
                 XuatDataGridViewRaExcel(dgSinhVien, saveFile.FileName);
             }
         }
-
-
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void SetButtonDisable(Button btn)
         {
+            btn.Enabled = false;
+            btn.BackColor = Color.White;
+            btn.ForeColor = Color.Black;
+        }
+        private void SetButtonEnable(Button btn)
+        {
+            btn.Enabled = true;
+            btn.BackColor = Color.FromArgb(21, 101, 192);
+            btn.ForeColor = Color.White;
 
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        private void SetStateDefault()
         {
+            // Trạng thái mặc định: Cho phép Thêm/Tìm, Vô hiệu hóa Sửa/Xóa
+            SetButtonEnable(btnThem);
+            SetButtonEnable(btnTim);
+            SetButtonDisable(btnSua);
+            SetButtonDisable(btnXoa);
+        }
 
+        private void SetStateSelected()
+        {
+            // Trạng thái khi chọn hàng: Vô hiệu hóa Thêm/Tìm, Cho phép Sửa/Xóa
+            SetButtonDisable(btnThem);
+            SetButtonDisable(btnTim);
+            SetButtonEnable(btnSua);
+            SetButtonEnable(btnXoa);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            SetStateDefault();
+            dgSinhVien.ClearSelection();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Click(object sender, EventArgs e)
         {
-
+            SetStateDefault();
+            dgSinhVien.ClearSelection();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void tableLayoutPanel3_Click(object sender, EventArgs e)
         {
-
+            SetStateDefault();
+            dgSinhVien.ClearSelection();
         }
 
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        private void panel3_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            SetStateDefault();
+            dgSinhVien.ClearSelection();
         }
     }
 }

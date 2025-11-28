@@ -16,39 +16,9 @@ namespace BTL_LTTQ.Common
     public partial class frmLogin : Form
     {
         private TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
-        private bool isLoggedIn = false;
         public frmLogin()
         {
             InitializeComponent();
-        }
-        private void lbLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbMatKhau_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbTenTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnLayout_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btLogin_Click(object sender, EventArgs e)
@@ -83,11 +53,6 @@ namespace BTL_LTTQ.Common
             }
 
             this.Hide(); // ẩn form đăng nhập
-        }
-
-        private void lbWelcome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

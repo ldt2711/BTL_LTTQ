@@ -109,7 +109,7 @@ namespace WinFormsApp.DAL
             }
         }
 
-        // ✅ Hàm lấy thống kê GPA theo trọng số tín chỉ
+        // Hàm lấy thống kê GPA theo trọng số tín chỉ
         public static DataTable GetThongKeHocLuc(string filterType1, string value1, string filterType2, string value2)
         {
             using (SqlConnection conn = DatabaseConnection.GetConnection())
