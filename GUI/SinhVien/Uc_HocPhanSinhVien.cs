@@ -41,5 +41,25 @@ namespace BTL_LTTQ.GUI.SinhVien
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lBIntro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBTenSinhVien_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
